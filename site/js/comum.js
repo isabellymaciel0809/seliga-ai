@@ -284,7 +284,7 @@
   const CONQUISTAS = [
     { id: "primeira-pergunta", icone: "chat", titulo: "Primeira dúvida", descricao: "Fez a primeira pergunta ao assistente" },
     { id: "por-que", icone: "porque", titulo: "Curioso(a)", descricao: "Abriu o \"Por quê?\" de uma resposta" },
-    { id: "comparou", icone: "sobre", titulo: "Comparador(a)", descricao: "Usou o modo comparação no chat" },
+    { id: "ouviu", icone: "ouvir", titulo: "Ouvinte", descricao: "Ouviu uma resposta em voz alta no chat" },
     { id: "escapou-1", icone: "seguro", titulo: "Escapou!", descricao: "Escapou de um golpe no simulador" },
     { id: "escapou-todos", icone: "simulador", titulo: "Imbatível", descricao: "Escapou dos 3 golpes do simulador" },
     { id: "quiz-feito", icone: "quiz", titulo: "Detetive", descricao: "Terminou o quiz \"É golpe ou não?\"" },

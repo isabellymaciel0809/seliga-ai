@@ -163,17 +163,17 @@
     passos.forEach((p) => observadorPassos.observe(p));
   }
 
-  // ---------- números que contam sozinhos e barras de comparação ----------
+  // ---------- números que contam sozinhos e barras de acertos ----------
   if (M) {
     const cego = M.conjuntos[M.conjuntos.length - 1]; // teste cego: a medida mais honesta
     const flesch = M.clareza["Assistente adaptado"]["Flesch (pt)"];
     const numeros = [
       { de: 0, ate: cego.assistente.certos, texto: (v) => `${v} de ${cego.assistente.total}`,
-        rotulo: "perguntas novas respondidas corretamente no teste cego", detalhe: `o chatbot de exemplo acertou ${cego.baseline.certos}` },
-      { de: M.fallbackTeste.baseline, ate: M.fallbackTeste.assistente, texto: (v) => `${v}`,
-        rotulo: "perguntas sem resposta no teste oficial", detalhe: `o chatbot de exemplo deixou ${M.fallbackTeste.baseline} sem resposta` },
+        rotulo: "perguntas novas respondidas corretamente no teste cego", detalhe: "escritas antes do último ajuste e usadas uma única vez" },
+      { de: 0, ate: M.informais.assistente, texto: (v) => `${v} de ${M.informais.total}`,
+        rotulo: "perguntas informais respondidas corretamente", detalhe: "com gírias e abreviações, incluindo assuntos fora do tema" },
       { de: 0, ate: flesch, decimais: 1, texto: (v) => v.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
-        rotulo: "de 100 em facilidade de leitura", detalhe: "nível \"muito fácil\" (o exemplo: 30,6, \"difícil\")" },
+        rotulo: "de 100 em facilidade de leitura", detalhe: "nível \"muito fácil\"" },
     ];
     $("numeros").innerHTML = numeros.map((n, i) => `
       <div class="numero revelar" data-i="${i}">
@@ -186,8 +186,7 @@
     $("barras").innerHTML = M.conjuntos.map((c) => `
       <div class="barra-grupo">
         <div class="barra-nome">${escapar(c.nome)}</div>
-        <div class="barra-linha"><i class="base" style="--largura:${pct(c.baseline)}%"></i><b>${pct(c.baseline)}%</b></div>
-        <div class="barra-linha"><i class="nosso" style="--largura:${pct(c.assistente)}%"></i><b>${pct(c.assistente)}%</b></div>
+        <div class="barra-linha"><i style="--largura:${pct(c.assistente)}%"></i><b>${pct(c.assistente)}%</b></div>
       </div>`).join("");
 
     const contar = (el) => {
@@ -204,7 +203,7 @@
       };
       requestAnimationFrame(passo);
     };
-    const comparativo = document.querySelector(".comparativo");
+    const painelBarras = document.querySelector(".painel-barras");
     if ("IntersectionObserver" in window && !reduzirMovimento) {
       const observadorNumeros = new IntersectionObserver((entradas) => {
         entradas.forEach((e) => {
@@ -215,10 +214,10 @@
         });
       }, { threshold: 0.4 });
       document.querySelectorAll(".numero").forEach((el) => observadorNumeros.observe(el));
-      observadorNumeros.observe(comparativo);
+      observadorNumeros.observe(painelBarras);
     } else {
       document.querySelectorAll(".numero").forEach((el) => el.classList.add("visivel"));
-      comparativo.classList.add("visivel");
+      painelBarras.classList.add("visivel");
     }
   }
 

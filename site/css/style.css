@@ -32,9 +32,8 @@
   --alerta-borda: #ff6b5e;
   --sucesso: #4cc282;
   --sucesso-fundo: rgba(76, 194, 130, 0.14);
-  /* gráficos: paleta validada para fundo escuro (azul = assistente, vermelho = baseline) */
+  /* gráficos: paleta validada para fundo escuro */
   --serie-assistente: #6b7bff;
-  --serie-baseline: #e8443a;
   --grade: rgba(255, 255, 255, 0.08);
   --eixo: rgba(255, 255, 255, 0.22);
   --sombra: none;
@@ -71,7 +70,6 @@
   --sucesso: #1f8a4c;
   --sucesso-fundo: #e5f6ec;
   --serie-assistente: #0000ff;
-  --serie-baseline: #da291c;
   --grade: #e1e0d9;
   --eixo: #c3c2b7;
   --sombra: 0 1px 3px rgba(31, 29, 29, 0.08), 0 4px 16px rgba(0, 0, 255, 0.05);
@@ -103,7 +101,6 @@
   --sucesso: #7dffb0;
   --sucesso-fundo: #000000;
   --serie-assistente: #3987e5;
-  --serie-baseline: #d95926;
   --grade: #444444;
   --eixo: #ffffff;
   --sombra: none;
@@ -114,10 +111,6 @@
   color-scheme: dark;
 }
 :root[data-contraste="alto"] a { color: #ffd84d; }
-:root[data-contraste="alto"] .interruptor .trilho { background: #000000; border: 2px solid #ffffff; }
-:root[data-contraste="alto"] .interruptor .trilho::after { background: #ffffff; top: 1px; left: 1px; }
-:root[data-contraste="alto"] .interruptor input:checked + .trilho { background: #ffd84d; border-color: #ffd84d; }
-:root[data-contraste="alto"] .interruptor input:checked + .trilho::after { background: #000000; }
 
 /* ===================== Base ===================== */
 * { box-sizing: border-box; }
@@ -311,43 +304,11 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 8px;
   padding: 8px 0 0;
 }
 
-.interruptor {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-.interruptor input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.interruptor .trilho {
-  width: 42px;
-  height: 24px;
-  border-radius: 999px;
-  background: var(--borda);
-  position: relative;
-  transition: background 0.2s;
-  flex: 0 0 auto;
-}
-.interruptor .trilho::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-  transition: transform 0.2s;
-}
-.interruptor input:checked + .trilho { background: var(--primaria); }
-.interruptor input:checked + .trilho::after { transform: translateX(18px); }
-.interruptor input:focus-visible + .trilho { outline: 3px solid var(--primaria); outline-offset: 2px; }
 
 .botao-texto {
   border: 1px solid var(--borda);
@@ -476,21 +437,6 @@ body::before {
 .duvida .opcoes-duvida { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .duvida .opcoes-duvida .chip { background: var(--primaria-clara); color: var(--primaria-tinta); border-color: transparent; font-weight: 800; }
 
-/* Modo comparação */
-.comparacao {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  width: 100%;
-  animation: surgir 0.2s ease-out;
-}
-.comparacao .lado { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.comparacao .lado-titulo { display: flex; align-items: center; gap: 8px; font-size: 0.8125rem; font-weight: 800; color: var(--texto-suave); }
-.comparacao .chave { width: 12px; height: 12px; border-radius: 3px; flex: 0 0 auto; }
-.comparacao .mensagem { max-width: 100%; }
-.comparacao .baseline .mensagem { border-top: 4px solid var(--serie-baseline); border-top-left-radius: var(--raio); }
-.comparacao .assistente-lado .mensagem { border-top: 4px solid var(--serie-assistente); border-top-left-radius: var(--raio); }
-.sem-resposta { font-weight: 800; color: var(--alerta-borda); }
 
 .digitando { display: flex; gap: 4px; padding: 16px; }
 .digitando span {
@@ -981,7 +927,7 @@ h1, h2, .titulo-secao, .abertura-titulo, .frase-fixa p, .boas-vindas h1 { font-w
   stroke-linejoin: round;
   vertical-align: -0.2em;
 }
-.chip, .etiqueta, .acoes button, .respostas-quiz button, .menu a, .botao-icone, .interruptor {
+.chip, .etiqueta, .acoes button, .respostas-quiz button, .menu a, .botao-icone {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1254,15 +1200,13 @@ mark { background: rgba(249, 176, 64, 0.25); color: #ffd28a; border-radius: 4px;
 :root[data-contraste="alto"] .numero .valor { background: none; color: #ffd84d; }
 .numero .rotulo { margin-top: 8px; font-weight: 700; }
 .numero .detalhe { font-size: 0.8125rem; color: var(--texto-suave); margin-top: 4px; }
-.comparativo { margin: 28px auto 8px; max-width: 760px; padding: 22px; border-radius: 22px; background: var(--vidro); border: 1px solid var(--vidro-borda); }
+.painel-barras { margin: 28px auto 8px; max-width: 760px; padding: 22px; border-radius: 22px; background: var(--vidro); border: 1px solid var(--vidro-borda); }
 .barras { display: flex; flex-direction: column; gap: 16px; }
 .barra-nome { font-weight: 800; font-size: 0.9375rem; margin-bottom: 6px; }
 .barra-linha { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-.barra-linha i { display: block; height: 18px; width: 0; border-radius: 0 6px 6px 0; transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.barra-linha i.base { background: var(--serie-baseline); }
-.barra-linha i.nosso { background: var(--serie-assistente); }
+.barra-linha i { display: block; height: 18px; width: 0; border-radius: 0 6px 6px 0; background: var(--serie-assistente); transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .barra-linha b { font-size: 0.875rem; }
-.comparativo.visivel .barra-linha i { width: calc(var(--largura) * 0.85); }
+.painel-barras.visivel .barra-linha i { width: calc(var(--largura) * 0.85); }
 
 .chamada-final { text-align: center; padding: 80px 0 40px; }
 .chamada-final h2 { font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 900; margin: 0 0 20px; letter-spacing: -0.02em; }
@@ -1508,7 +1452,7 @@ html { scrollbar-gutter: stable; }
   .acessibilidade button { min-width: 34px; height: 34px; padding: 0 8px; }
   .atalhos { grid-template-columns: 1fr; }
   .marca small { display: none; }
-  .comparacao, .duas-colunas, .respostas-quiz { grid-template-columns: 1fr; }
+  .duas-colunas, .respostas-quiz { grid-template-columns: 1fr; }
   .linha-assistente { max-width: 100%; }
   .mensagem { max-width: 92%; }
   .tile.destaque { grid-column: auto; }

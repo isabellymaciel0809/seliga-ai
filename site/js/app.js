@@ -1,16 +1,15 @@
-// Interface do chat: mensagens, modo comparação, confirmação de tema, explicação e leitura em voz alta.
+// Interface do chat: mensagens, confirmação de tema, explicação e leitura em voz alta.
 (function () {
   const conversa = document.getElementById("conteudo");
   const formulario = document.getElementById("formulario");
   const campo = document.getElementById("pergunta");
   const chips = document.getElementById("chips");
-  const comparar = document.getElementById("comparar");
   const { escapar, formatarResposta, partesResposta } = window.Formatar;
   const { Comum } = window;
   const icone = Comum.icone;
 
   // o modelo (~1 MB) carrega depois de a tela aparecer; as respostas esperam por ele
-  let Assistente, Baseline, MODELO;
+  let Assistente, MODELO;
   const carregarScript = (src) => new Promise((ok, falha) => {
     const s = Object.assign(document.createElement("script"), { src, onload: ok, onerror: falha });
     document.body.appendChild(s);
@@ -19,8 +18,8 @@
   function modeloPronto() {
     if (!carregamento) {
       carregamento = carregarScript("js/modelo.js")
-        .then(() => Promise.all([carregarScript("js/assistente.js"), carregarScript("js/baseline.js")]))
-        .then(() => ({ Assistente, Baseline, MODELO } = window));
+        .then(() => carregarScript("js/assistente.js"))
+        .then(() => ({ Assistente, MODELO } = window));
     }
     return carregamento;
   }
@@ -171,7 +170,10 @@
       const botao = e.target.closest("button");
       if (!botao) return;
       const acao = botao.dataset.acao;
-      if (acao === "ouvir") Comum.alternarFala(textoParaFala(r), botao);
+      if (acao === "ouvir") {
+        Comum.alternarFala(textoParaFala(r), botao);
+        Comum.conquistar("ouviu");
+      }
       if (acao === "porque") alternarExplicacao(botao, r, pergunta);
       if (acao === "sim" || acao === "nao") {
         // só agradece: nada é salvo nem enviado
@@ -270,40 +272,6 @@
     rolarParaFim();
   }
 
-  // Modo comparação: baseline × Fica Esperto AI lado a lado
-  function mostrarComparacao(pergunta) {
-    Comum.conquistar("comparou");
-    const b = Baseline.responder(pergunta);
-    const r = Assistente.responder(pergunta);
-    const bloco = document.createElement("div");
-    bloco.className = "comparacao";
-
-    const ladoBase = document.createElement("div");
-    ladoBase.className = "lado baseline";
-    const semResposta = b.tema === "fora_do_escopo";
-    ladoBase.innerHTML = `
-      <div class="lado-titulo"><span class="chave" style="background:var(--serie-baseline)"></span>Chatbot de exemplo (baseline)</div>
-      <div class="mensagem assistente">
-        ${semResposta ? '<p class="sem-resposta">Não respondeu (fallback)</p>'
-          : b.tema === "dado_sensivel" ? "" : `<span class="etiqueta">${icone(b.tema)}${escapar(MODELO.nomesTemas[b.tema])}</span>`}
-        ${formatarResposta(b.resposta)}
-        <p class="referencia">Similaridade: ${b.confianca.toFixed(2)}</p>
-      </div>`;
-
-    const ladoAssist = document.createElement("div");
-    ladoAssist.className = "lado assistente-lado";
-    ladoAssist.innerHTML = '<div class="lado-titulo"><span class="chave" style="background:var(--serie-assistente)"></span>Fica Esperto AI (adaptado)</div>';
-    ladoAssist.appendChild(bolhaAssistente(r.duvida ? Assistente.respostaDoTema(r.duvida[0], r.confianca) : r, pergunta));
-    if (r.duvida) {
-      ladoAssist.querySelector(".mensagem").insertAdjacentHTML("afterbegin",
-        `<p class="referencia">Em dúvida entre ${escapar(MODELO.nomesTemas[r.duvida[0]])} e ${escapar(MODELO.nomesTemas[r.duvida[1]])}: no chat normal, eu pergunto qual é.</p>`);
-    }
-
-    bloco.append(ladoBase, ladoAssist);
-    conversa.appendChild(bloco);
-    rolarParaFim();
-  }
-
   function mostrarDigitando() {
     const bolha = document.createElement("div");
     bolha.className = "mensagem assistente digitando";
@@ -335,7 +303,6 @@
     adicionarUsuario(pergunta);
     campo.value = "";
     responderComAtraso(() => {
-      if (comparar.checked) return mostrarComparacao(pergunta);
       const r = Assistente.responder(pergunta);
       if (r.duvida) mostrarDuvida(r, pergunta);
       else mostrarResposta(r, pergunta);

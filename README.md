@@ -12,7 +12,7 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 
 1. **Abra o site:** **https://isabellymaciel0809.github.io/fica-esperto-ai/**. Funciona no computador e no celular, sem instalar nada. Sem internet, dê dois cliques em `site/index.html` na pasta do projeto: funciona igual (só a fonte dos títulos muda).
 2. **Teste o chat:** escreva na caixa da página inicial, ou abra o Chat, do jeito que um adolescente escreveria, como *"um cara no zap pediu o código que chegou no meu cel"*.
-3. **Ligue o "Comparar com o chatbot de exemplo"**, no topo do chat: ele mostra lado a lado a resposta do chatbot da professora e a do nosso. É a melhor demonstração do projeto.
+3. **Clique em "Por quê?"** abaixo da resposta: ele mostra as palavras que mais pesaram na escolha do tema.
 4. **Veja a página 📊 Sobre:** resume problema, funcionamento e resultados.
 
 **Na apresentação:** a animação de entrada aparece só uma vez por visita. Para mostrar de novo, abra **https://isabellymaciel0809.github.io/fica-esperto-ai/?abertura** (ou clique em "Ver a abertura de novo", no rodapé da página inicial). O botão "Pular" e a tecla Esc pulam a animação.
@@ -24,7 +24,7 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 | Página | O que faz |
 |---|---|
 | 🏠 **Início** (`index.html`) | Abre com uma **animação de entrada** (partículas vermelhas e azuis formam o escudo). Depois, uma página escura no estilo "Apple": a frase que acende enquanto rola, um celular que mostra passo a passo como o assistente pensa (com o modelo calculando de verdade), os números que contam sozinhos e os atalhos para o resto do site |
-| 💬 **Chat** (`chat.html`) | O assistente. Abre com uma tela de boas-vindas com sugestões, e as respostas aparecem "sendo digitadas", com horário. Tem modo comparação, confirmação do tema quando está em dúvida ("é sobre A ou B?"), botão **"Por que essa resposta?"** (mostra as palavras que mais pesaram), **🔊 Ouvir** e perguntas de continuação |
+| 💬 **Chat** (`chat.html`) | O assistente. Abre com uma tela de boas-vindas com sugestões, e as respostas aparecem "sendo digitadas", com horário. Tem confirmação do tema quando está em dúvida ("é sobre A ou B?"), botão **"Por que essa resposta?"** (mostra as palavras que mais pesaram), **🔊 Ouvir** e perguntas de continuação |
 | 🎮 **Simulador** | 3 golpes encenados, cada um com a cara do app onde acontece (WhatsApp, chat de jogo e Instagram), com "digitando…", horário e "✓✓" de lido. A pessoa escolhe o que responder, vê os sinais de alerta no fim e ganha confete se escapar |
 | 🚩 **Quiz** | "É golpe ou não?": 10 mensagens (6 golpes e 4 normais), cada uma com a aparência do canal real (SMS, e-mail, notificação, WhatsApp, grupo, chat de jogo, Wi-Fi, permissão do celular). No fim, dá para baixar ou compartilhar um card com o resultado |
 | ✅ **Checklist** | 10 perguntas sobre hábitos de segurança, nota de 0 a 10 e plano do que melhorar |
@@ -34,11 +34,11 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 
 Todas as páginas usam o mesmo visual escuro e tecnológico da página inicial, com cartões de "vidro fosco" e brilho vermelho e azul no fundo. No topo, ficam os botões **A−/A+** (tamanho do texto), **☀/☾** (tema claro ou escuro; o site lembra a escolha) e **◐** (alto contraste). Ao trocar de página, o topo e o menu ficam parados e só o conteúdo muda, com uma transição suave (no Chrome e no Edge). No celular, o menu vira uma barra fixa embaixo da tela, como nos apps. Nenhuma conversa é salva nem enviada: tudo roda no navegador, sem servidor.
 
-**Visual:** azul da SoulCode (`#0000FF`) nos botões e no assistente, vermelho da Claro (`#DA291C`) nos alertas e no baseline, amarelo da SoulCode (`#F9B040`) nos exemplos. O par azul e vermelho foi testado para daltonismo e para contraste de leitura. O logo é um escudo em degradê do vermelho da Claro para o azul da SoulCode, e os ícones da interface seguem todos o mesmo estilo de linha.
+**Visual:** azul da SoulCode (`#0000FF`) nos botões, no assistente e nos gráficos, vermelho da Claro (`#DA291C`) nos alertas, amarelo da SoulCode (`#F9B040`) nos exemplos. O par azul e vermelho foi testado para daltonismo e para contraste de leitura. O logo é um escudo em degradê do vermelho da Claro para o azul da SoulCode, e os ícones da interface seguem todos o mesmo estilo de linha.
 
 ---
 
-**Conquistas:** são 10 medalhas, como "Primeira dúvida", "Escapou de um golpe" e "Acertou 9 ou mais no quiz". Elas são desbloqueadas usando o site e aparecem na seção "Seu progresso" da página inicial. Ficam salvas só no aparelho, sem cadastro.
+**Conquistas:** são 10 medalhas, como "Primeira dúvida", "Ouviu uma resposta em voz alta" e "Acertou 9 ou mais no quiz". Elas são desbloqueadas usando o site e aparecem na seção "Seu progresso" da página inicial. Ficam salvas só no aparelho, sem cadastro.
 
 **Seção "Quem fez" (página Sobre):** ela fica escondida até alguém preencher os nomes do grupo. Abra `site/js/sobre.js`, procure a lista `EQUIPE` e escreva uma linha por pessoa, assim:
 
@@ -66,24 +66,22 @@ O chatbot **não é um ChatGPT**: ele nunca inventa orientações. Ele só escol
 
 ## Resultados
 
-Comparação com o chatbot do notebook de exemplo da professora (baseline), em perguntas que o modelo não viu no treino:
+Acertos do assistente em perguntas que o modelo não viu no treino:
 
-| | Baseline (professora) | Fica Esperto AI |
-|---|---|---|
-| Teste oficial da base (24 perguntas) | 9 de 24 | **21 de 24** |
-| Teste oficial com a confirmação do tema | — | **24 de 24** |
-| Perguntas sem resposta (fallback) no teste oficial | 15 de 24 | **0 de 24** |
-| Perguntas informais novas: validação (40) | 4 de 40 | **40 de 40** |
-| Perguntas informais novas: lote final (24) | 6 de 24 | **22 de 24** |
-| **Teste cego** (40 perguntas novas, escritas antes da última mudança e usadas uma única vez) | 17 de 40 | **38 de 40** |
-| Palavras por frase (quanto menor, mais fácil) | 18,9 | **7,8** |
-| Facilidade de leitura (Flesch, 0 a 100) | 30,6 (difícil) | **82,5 (muito fácil)** |
+| Conjunto | Fica Esperto AI |
+|---|---|
+| Teste oficial da base (24 perguntas) | **21 de 24** |
+| Teste oficial com a confirmação do tema | **24 de 24** |
+| Perguntas sem resposta (fallback) no teste oficial | **0 de 24** |
+| Perguntas informais novas: validação (40) | **40 de 40** |
+| Perguntas informais novas: lote final (24) | **22 de 24** |
+| **Teste cego** (40 perguntas novas, escritas antes da última mudança e usadas uma única vez) | **38 de 40** |
+| Palavras por frase (quanto menor, mais fácil) | **7,8** |
+| Facilidade de leitura (Flesch, 0 a 100) | **82,5 (muito fácil)** |
 
-**Em uma frase:** o chatbot da professora quase nunca erra o tema, mas recusa a maioria das perguntas. O nosso responde a quase todas e acerta a grande maioria. Mesmo treinado com os nossos exemplos, o baseline acerta só 5 de 40, então a melhoria vem do método, não só dos dados.
+**O teste cego é a medida mais honesta.** Ele foi escrito antes da última mudança (a categoria "fora do escopo", que ensina o modelo a recusar perguntas sobre outros assuntos) e usado uma única vez. A mudança tem um custo: o lote final caiu de 24 para 22, porque duas perguntas válidas mas vagas passaram a ser recusadas. Somando os três lotes, o acerto foi de 96 para 100 de 104.
 
-**O teste cego é a medida mais honesta.** Ele foi escrito antes da última mudança (a categoria "fora do escopo", que ensina o modelo a recusar perguntas sobre outros assuntos) e usado uma única vez. O baseline tem 17 acertos nele porque recusa corretamente as 8 perguntas fora do assunto. A mudança tem um custo: o lote final caiu de 24 para 22, porque duas perguntas válidas mas vagas passaram a ser recusadas. Somando os três lotes, o acerto foi de 96 para 100 de 104.
-
-**Para os slides:** os gráficos prontos estão em `grafico_acertos.png` e `grafico_confusao.png`, e a tabela em `resumo_indicadores.csv`.
+**Para os slides:** use o gráfico de acertos da página 📊 Sobre (dá para tirar um print) e a matriz de confusão em `grafico_confusao.png`, que mostra onde o assistente acerta e onde confunde os temas. O `grafico_acertos.png` e o `resumo_indicadores.csv` são gerados pelo notebook e ainda trazem o baseline, então não use esses dois nos slides.
 
 ---
 
@@ -100,7 +98,7 @@ Comparação com o chatbot do notebook de exemplo da professora (baseline), em p
 | `Roteiro_Apresentacao.docx` / `.pdf` | **Roteiro da demonstração** de 5 minutos: lista do que conferir antes, falas, perguntas testadas para o chat, plano B e respostas para a banca |
 | `exemplos_complementares.csv` | 210 frases de treino no jeito adolescente de escrever: 164 sobre os 8 temas e 46 sobre outros assuntos (categoria `fora_do_escopo`) |
 | `perguntas_validacao.csv` | 104 perguntas novas para avaliar o assistente, em três lotes: validação, final e cego (nunca usadas no treino) |
-| `Projeto_2_Seguranca_Digital_Exemplo_Funcional.ipynb` | Notebook de exemplo da professora (o baseline). Não vai para o GitHub, por ser material da disciplina |
+| `Projeto_2_Seguranca_Digital_Exemplo_Funcional.ipynb` | Notebook de exemplo da professora. Não vai para o GitHub, por ser material da disciplina |
 | `resultado_testes.csv`, `resumo_indicadores.csv` | Resultados gerados pelo notebook (caso a caso e resumo) |
 | `grafico_acertos.png`, `grafico_confusao.png` | Gráficos gerados pelo notebook |
 

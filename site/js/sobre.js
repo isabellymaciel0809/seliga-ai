@@ -6,26 +6,25 @@
   const virgula = (n) => n.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
   const [teste, validacao, final, cego] = M.conjuntos;
-  const clarezaB = M.clareza["Baseline (exemplo)"];
   const clarezaA = M.clareza["Assistente adaptado"];
 
   // ---------- números em destaque ----------
   const tiles = [
     { destaque: true, rotulo: "Teste cego: perguntas novas, escritas antes do último ajuste",
       valor: `${cego.assistente.certos} de ${cego.assistente.total}`,
-      detalhe: `O chatbot de exemplo acertou ${cego.baseline.certos} de ${cego.baseline.total} (inclui 8 perguntas fora do assunto)` },
+      detalhe: "Usadas uma única vez, sem ajustes depois (inclui 8 perguntas fora do assunto)" },
     { rotulo: "Teste oficial da base",
-      valor: `${teste.baseline.certos} <span class="seta">→</span> ${teste.assistente.certos}`,
-      detalhe: `de ${teste.assistente.total} perguntas (baseline → Fica Esperto AI)` },
+      valor: `${teste.assistente.certos} de ${teste.assistente.total}`,
+      detalhe: "perguntas respondidas com o tema certo" },
     { rotulo: "Perguntas sem resposta (fallback)",
-      valor: `${M.fallbackTeste.baseline} <span class="seta">→</span> ${M.fallbackTeste.assistente}`,
-      detalhe: `de ${M.fallbackTeste.total} no teste oficial` },
+      valor: `${M.fallbackTeste.assistente} de ${M.fallbackTeste.total}`,
+      detalhe: "no teste oficial: todas receberam orientação" },
     { rotulo: "Facilidade de leitura (Flesch, 0 a 100)",
-      valor: `${virgula(clarezaB["Flesch (pt)"])} <span class="seta">→</span> ${virgula(clarezaA["Flesch (pt)"])}`,
-      detalhe: "de \"difícil\" para \"muito fácil\"" },
+      valor: virgula(clarezaA["Flesch (pt)"]),
+      detalhe: "nível \"muito fácil\"" },
     { rotulo: "Palavras por frase",
-      valor: `${virgula(clarezaB["palavras por frase"])} <span class="seta">→</span> ${virgula(clarezaA["palavras por frase"])}`,
-      detalhe: "frases mais curtas são mais fáceis de entender" },
+      valor: virgula(clarezaA["palavras por frase"]),
+      detalhe: "frases curtas são mais fáceis de entender" },
   ];
   document.getElementById("tiles").innerHTML = tiles.map((t) => `
     <div class="tile${t.destaque ? " destaque" : ""}">
@@ -40,17 +39,13 @@
     `${validacao.assistente.total + final.assistente.total + cego.assistente.total} ` +
     "em perguntas informais novas. Falta confirmar com perguntas escritas por adolescentes.";
   document.getElementById("h2").textContent =
-    `Indícios a favor: as respostas adaptadas têm frases mais curtas (${virgula(clarezaA["palavras por frase"])} palavras ` +
-    `contra ${virgula(clarezaB["palavras por frase"])}) e leitura mais fácil. A confirmação vem do teste com adolescentes ` +
+    `Indícios a favor: as respostas adaptadas têm frases curtas (${virgula(clarezaA["palavras por frase"])} palavras ` +
+    `por frase) e leitura "muito fácil" (${virgula(clarezaA["Flesch (pt)"])} de 100). A confirmação vem do teste com adolescentes ` +
     "(página Avaliação).";
 
-  // ---------- gráfico de barras agrupadas (SVG) ----------
-  const series = [
-    { chave: "baseline", nome: "Baseline (exemplo)", cor: "var(--serie-baseline)" },
-    { chave: "assistente", nome: "Fica Esperto AI", cor: "var(--serie-assistente)" },
-  ];
+  // ---------- gráfico de barras (SVG) ----------
   const grafico = document.getElementById("grafico");
-  const alturaGrupo = 84, barra = 22, vao = 6, topo = 8, direita = 52;
+  const alturaGrupo = 60, barra = 26, topo = 8, direita = 52;
   const H = topo + M.conjuntos.length * alturaGrupo + 28;
   // o desenho usa a largura real do espaço, para o texto não encolher no celular
   let L, esquerda, largura;
@@ -73,26 +68,23 @@
     svg += `<text class="rotulo-eixo" x="${x(v)}" y="${H - 8}" text-anchor="middle">${v}%</text>`;
   }
   M.conjuntos.forEach((c, i) => {
-    const y0 = topo + i * alturaGrupo + (alturaGrupo - (2 * barra + vao)) / 2;
+    const y = topo + i * alturaGrupo + (alturaGrupo - barra) / 2;
     const [nome, detalhe] = c.nome.replace(")", "").split(" (");
-    svg += `<text class="rotulo-eixo" x="${esquerda - 12}" y="${y0 + barra}" text-anchor="end" style="fill:var(--texto);font-weight:700">${escapar(nome)}</text>`;
-    svg += `<text class="rotulo-eixo" x="${esquerda - 12}" y="${y0 + barra + 17}" text-anchor="end">${escapar(detalhe || "")}</text>`;
-    series.forEach((s, k) => {
-      const y = y0 + k * (barra + vao);
-      const valor = pct(c[s.chave]);
-      svg += `<path d="${barraPath(esquerda, y, x(valor) - esquerda, barra)}" style="fill:${s.cor}"/>`;
-      svg += `<text class="rotulo-valor" x="${x(valor) + 6}" y="${y + barra / 2 + 5}">${valor}%</text>`;
-      const dica = escapar(`${s.nome} · ${c.nome}: ${c[s.chave].certos} de ${c[s.chave].total} (${valor}%)`);
-      svg += `<rect class="alvo" x="${esquerda}" y="${y - vao / 2}" width="${largura + direita}" height="${barra + vao}"
-        tabindex="0" role="img" aria-label="${dica}" data-dica="${dica}"/>`;
-    });
+    svg += `<text class="rotulo-eixo" x="${esquerda - 12}" y="${y + barra / 2 - 3}" text-anchor="end" style="fill:var(--texto);font-weight:700">${escapar(nome)}</text>`;
+    svg += `<text class="rotulo-eixo" x="${esquerda - 12}" y="${y + barra / 2 + 14}" text-anchor="end">${escapar(detalhe || "")}</text>`;
+    const valor = pct(c.assistente);
+    svg += `<path d="${barraPath(esquerda, y, x(valor) - esquerda, barra)}" style="fill:var(--serie-assistente)"/>`;
+    svg += `<text class="rotulo-valor" x="${x(valor) + 6}" y="${y + barra / 2 + 5}">${valor}%</text>`;
+    const dica = escapar(`${c.nome}: ${c.assistente.certos} de ${c.assistente.total} (${valor}%)`);
+    svg += `<rect class="alvo" x="${esquerda}" y="${y}" width="${largura + direita}" height="${barra}"
+      tabindex="0" role="img" aria-label="${dica}" data-dica="${dica}"/>`;
   });
   svg += `<line class="linha-base" x1="${esquerda}" x2="${esquerda}" y1="${topo}" y2="${H - 26}"/></svg>`;
   grafico.innerHTML = svg + '<div class="dica-grafico" role="status"></div>';
   }
 
   const rotuloGrafico = "Perguntas respondidas corretamente: " + M.conjuntos.map((c) =>
-    `${c.nome}: baseline ${pct(c.baseline)}%, Fica Esperto AI ${pct(c.assistente)}%`).join("; ");
+    `${c.nome}: ${pct(c.assistente)}%`).join("; ");
   desenhar();
   let ultimaLargura = grafico.clientWidth;
   window.addEventListener("resize", () => {
@@ -161,9 +153,8 @@
 
   // ---------- tabela com os mesmos dados ----------
   document.getElementById("tabela").innerHTML = `
-    <thead><tr><th>Conjunto</th><th class="num">Baseline</th><th class="num">Fica Esperto AI</th></tr></thead>
+    <thead><tr><th>Conjunto</th><th class="num">Acertos</th></tr></thead>
     <tbody>${M.conjuntos.map((c) => `<tr><td>${escapar(c.nome)}</td>
-      <td class="num">${c.baseline.certos}/${c.baseline.total} (${pct(c.baseline)}%)</td>
       <td class="num">${c.assistente.certos}/${c.assistente.total} (${pct(c.assistente)}%)</td></tr>`).join("")}
     </tbody>`;
 })();
