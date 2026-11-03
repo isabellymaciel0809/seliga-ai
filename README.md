@@ -91,6 +91,7 @@ Acertos do assistente em perguntas que o modelo não viu no treino:
 |---|---|
 | `site/` | **O protótipo funcional** (HTML, CSS e JavaScript, sem back-end), publicado no GitHub Pages |
 | `.github/workflows/pages.yml` | Publica a pasta `site/` no GitHub Pages a cada envio (push) para o GitHub |
+| `vercel.json` | Faz a Vercel mostrar a pasta `site/` no endereço principal (a Vercel também publica a cada push) |
 | `Assistente_Seguranca_Digital_Adolescentes.ipynb` | Nosso notebook, com a mesma estrutura do exemplo da professora (seções 0 a 10) |
 | `Planejamento_Projeto_IA_Adolescentes.docx` | Documento do projeto: tema, hipóteses, metodologia, resultados e limitações |
 | `Projeto_2_Seguranca_Digital_Adolescentes.csv` | Base da disciplina, original, sem alterações |
