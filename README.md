@@ -10,7 +10,7 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 
 ## Para começar (2 minutos)
 
-1. **Abra o site:** **https://isabellymaciel0809.github.io/fica-esperto-ai/**. Funciona no computador e no celular, sem instalar nada. Sem internet, dê dois cliques em `site/index.html` na pasta do projeto: funciona igual (só a fonte dos títulos muda).
+1. **Abra o site:** **https://isabellymaciel0809.github.io/fica-esperto-ai/** ou **https://fica-esperto-ai.vercel.app** (o mesmo site, nos dois endereços). Funciona no computador e no celular, sem instalar nada. Sem internet, dê dois cliques em `site/index.html` na pasta do projeto: funciona igual (só a fonte dos títulos muda).
 2. **Teste o chat:** escreva na caixa da página inicial, ou abra o Chat, do jeito que um adolescente escreveria, como *"um cara no zap pediu o código que chegou no meu cel"*.
 3. **Clique em "Por quê?"** abaixo da resposta: ele mostra as palavras que mais pesaram na escolha do tema.
 4. **Veja a página 📊 Sobre:** resume problema, funcionamento e resultados.
@@ -116,7 +116,7 @@ Acertos do assistente em perguntas que o modelo não viu no treino:
 | **Teste com adolescentes** | A fazer: é o que confirma as hipóteses H1 e H2 (veja abaixo) |
 | Revisar os textos do simulador, do quiz, do checklist e das dicas | A fazer: todo mundo pode ler e sugerir ajustes |
 | Preencher o resultado do teste com adolescentes no documento Word | Depois do teste |
-| Publicar o site | Feito: https://isabellymaciel0809.github.io/fica-esperto-ai/ |
+| Publicar o site | Feito: https://isabellymaciel0809.github.io/fica-esperto-ai/ e https://fica-esperto-ai.vercel.app |
 | QR code do site para os slides | A fazer |
 
 ### Como aplicar o teste com adolescentes
@@ -128,7 +128,7 @@ Use a página **📝 Avaliação**, presencialmente. Leva uns 5 minutos por pess
 
 **Cuidados:**
 - É anônimo: pede só a faixa de idade. Perguntas com CPF, senha ou código não são registradas.
-- As respostas ficam **só no aparelho usado**, então use sempre o mesmo computador, o mesmo navegador e o mesmo endereço. O site publicado e o arquivo local guardam as respostas separadas, então escolha um dos dois e use só ele no teste todo (o recomendado é o site publicado).
+- As respostas ficam **só no aparelho usado**, então use sempre o mesmo computador, o mesmo navegador e o mesmo endereço. Cada endereço (GitHub Pages, Vercel e o arquivo local) guarda as respostas separado, então escolha um só e use ele no teste todo (o recomendado é o GitHub Pages).
 - No fim, em **Área do aplicador** (rodapé da página), baixe `avaliacao_comparacoes.csv` e `avaliacao_perguntas.csv` e coloque-os na pasta do notebook. A **seção 9** do notebook faz a análise.
 - Se os participantes forem **menores de idade**, combinem antes com a professora e a escola como pedir a autorização.
 
@@ -142,7 +142,7 @@ Não edite `site/js/modelo.js` nem `site/js/metricas.js` à mão: os dois são g
 2. Rode todas as células. A seção 6.2 gera o `modelo.js` e a seção 10 gera o `metricas.js`.
    - No Colab, faça o upload dos CSVs antes e, no fim, baixe os dois arquivos gerados (painel **Arquivos** → `site/js/`) para substituir os da pasta `site/js/`.
 3. Recarregue o site local com **Ctrl+F5**.
-4. Envie as mudanças para o GitHub (`git add`, `git commit` e `git push`). O site publicado se atualiza sozinho em 1 ou 2 minutos (acompanhe na aba **Actions** do repositório).
+4. Envie as mudanças para o GitHub (`git add`, `git commit` e `git push`). Os dois endereços publicados se atualizam sozinhos em 1 ou 2 minutos (o GitHub Pages aparece na aba **Actions** do repositório, e a Vercel no painel do projeto).
 
 Os textos do simulador, do quiz, do checklist e das dicas ficam direto nos arquivos `site/js/simulador.js`, `quiz.js`, `checklist.js` e `dicas.js`, e podem ser editados à mão.
 
