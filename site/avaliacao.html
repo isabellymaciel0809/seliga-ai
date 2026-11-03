@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avaliação · Fica Esperto AI</title>
+  <meta name="description" content="Avaliação do assistente de segurança digital com adolescentes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='.15' stop-color='%23da291c'/%3E%3Cstop offset='.9' stop-color='%230000ff'/%3E%3C/linearGradient%3E%3Cpath d='M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z' fill='url(%23d)'/%3E%3Cpath d='m16.5 24.5 5 5 10-11' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#05050f">
+  <script>/* aplica tema e contraste salvos antes de desenhar, para a tela não piscar */try{var d=document.documentElement;if(localStorage.getItem("fe_tema")==="claro")d.dataset.tema="claro";if(localStorage.getItem("fe_contraste")==="alto")d.dataset.contraste="alto"}catch(e){}</script>
+</head>
+<body data-pagina="avaliacao">
+  <div class="casca">
+    <div id="topo-site"></div>
+
+    <main id="conteudo">
+    <div class="progresso" aria-hidden="true"><div id="barra"></div></div>
+
+    <!-- Tela inicial -->
+    <section id="tela-inicio" class="tela">
+      <h2>Oi! Bora testar um assistente? 👋</h2>
+      <p>Leva uns 5 minutos. Você vai:</p>
+      <ol>
+        <li>ler 3 situações e dar notas para duas respostas diferentes;</li>
+        <li>fazer perguntas do seu jeito para o assistente e dizer se a resposta ajudou.</li>
+      </ol>
+      <div class="aviso">
+        <strong>É anônimo.</strong> Não escreva seu nome, telefone, escola ou qualquer dado pessoal.
+        Não existe resposta certa ou errada: o que está sendo avaliado é o assistente, não você.
+      </div>
+      <label class="campo">
+        <span>Sua idade</span>
+        <select id="faixa">
+          <option value="">Escolha...</option>
+          <option value="ate_12">até 12 anos</option>
+          <option value="13_14">13 a 14 anos</option>
+          <option value="15_17">15 a 17 anos</option>
+          <option value="18_mais">18 anos ou mais</option>
+        </select>
+      </label>
+      <label class="confirmar">
+        <input type="checkbox" id="concordo">
+        <span>Quero participar e sei que minhas respostas são anônimas e usadas só neste projeto da escola.</span>
+      </label>
+      <p id="erro-inicio" class="erro" role="alert"></p>
+      <button id="comecar" class="botao-principal" type="button">Começar</button>
+    </section>
+
+    <!-- Comparação de respostas -->
+    <section id="tela-comparacao" class="tela" hidden>
+      <p class="passo" id="passo-comparacao"></p>
+      <h2 id="situacao"></h2>
+      <p class="instrucao">Leia as duas respostas e dê uma nota para cada uma.</p>
+      <div id="respostas" class="duas-colunas"></div>
+      <fieldset class="escolha">
+        <legend>Qual resposta te ajudaria mais nessa situação?</legend>
+        <div class="opcoes">
+          <label><input type="radio" name="preferida" value="A"> Resposta A</label>
+          <label><input type="radio" name="preferida" value="B"> Resposta B</label>
+        </div>
+      </fieldset>
+      <p id="erro-comparacao" class="erro" role="alert"></p>
+      <button id="proxima" class="botao-principal" type="button">Próxima</button>
+    </section>
+
+    <!-- Perguntas livres -->
+    <section id="tela-perguntas" class="tela" hidden>
+      <p class="passo">Última parte</p>
+      <h2>Agora pergunte do seu jeito</h2>
+      <p class="instrucao">
+        Pense numa situação que você ou alguém que você conhece já viveu na internet (golpe, link estranho,
+        senha, fake news...) e pergunte. Faça até 3 perguntas. <strong>Sem dados pessoais.</strong>
+      </p>
+      <form id="form-pergunta" class="entrada" autocomplete="off">
+        <label for="pergunta-livre" class="sr-only">Sua pergunta</label>
+        <input id="pergunta-livre" type="text" maxlength="300" placeholder="Escreva como você escreveria no chat..." required>
+        <button type="submit" class="enviar" aria-label="Enviar pergunta">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5l3 8.5-3 8.5Zm3-8.5h8"/></svg>
+        </button>
+      </form>
+      <div id="resposta-livre"></div>
+      <p id="contador-perguntas" class="instrucao"></p>
+      <button id="terminar" class="botao-secundario" type="button">Terminar</button>
+    </section>
+
+    <!-- Fim -->
+    <section id="tela-fim" class="tela" hidden>
+      <h2>Valeu demais! 💜</h2>
+      <p>Suas respostas foram salvas. Pode devolver o aparelho para quem está aplicando o teste.</p>
+      <button id="proximo-participante" class="botao-principal" type="button">Próximo participante</button>
+    </section>
+
+    <!-- Área do aplicador -->
+    <section id="tela-aplicador" class="tela" hidden>
+      <h2>Área do aplicador</h2>
+      <p id="resumo-aplicador"></p>
+      <p class="instrucao">
+        Os resultados ficam salvos só neste navegador. Baixe os dois arquivos e coloque-os na pasta do notebook
+        (seção 9) para analisar.
+      </p>
+      <div class="botoes">
+        <button id="baixar-comparacoes" class="botao-principal" type="button">Baixar avaliacao_comparacoes.csv</button>
+        <button id="baixar-perguntas" class="botao-principal" type="button">Baixar avaliacao_perguntas.csv</button>
+      </div>
+      <div class="botoes">
+        <button id="voltar-inicio" class="botao-secundario" type="button">Voltar para o início</button>
+        <button id="apagar" class="botao-perigo" type="button">Apagar todos os resultados</button>
+      </div>
+      <p id="aviso-armazenamento" class="erro" role="alert"></p>
+    </section>
+
+    </main>
+
+    <footer class="rodape">
+      <button id="abrir-aplicador" class="link" type="button">Área do aplicador</button>
+    </footer>
+  </div>
+
+  <script src="js/comum.js" defer></script>
+  <script src="js/modelo.js" defer></script>
+  <script src="js/assistente.js" defer></script>
+  <script src="js/formatar.js" defer></script>
+  <script src="js/avaliacao.js" defer></script>
+</body>
+</html>

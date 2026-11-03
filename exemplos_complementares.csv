@@ -1,0 +1,211 @@
+exemplo_id,intencao,texto_usuario,rotulo_origem
+C001,whatsapp,um número novo com a foto da minha avó pediu dinheiro,sintetico_grupo
+C002,whatsapp,alguém tá se passando por mim no whatsapp,sintetico_grupo
+C003,whatsapp,clonaram o perfil do meu amigo e estão pedindo pix pra todo mundo,sintetico_grupo
+C004,whatsapp,meu primo mandou mensagem de outro número pedindo pra pagar um boleto,sintetico_grupo
+C005,whatsapp,recebi oi sou eu troquei de número me salva aí,sintetico_grupo
+C006,whatsapp,uma conta fake com meu nome está mandando mensagem para meus contatos,sintetico_grupo
+C007,whatsapp,a pessoa diz que é meu pai mas o número é diferente,sintetico_grupo
+C008,whatsapp,pediram dinheiro emprestado usando a foto do meu irmão,sintetico_grupo
+C009,whatsapp,um perfil copiou as fotos da minha mãe e mandou mensagem pros parentes,sintetico_grupo
+C010,whatsapp,me chamaram no zap fingindo ser um amigo da escola,sintetico_grupo
+C011,whatsapp,golpe do falso parente pedindo pix,sintetico_grupo
+C012,whatsapp,alguém mandou mensagem dizendo que é minha tia e precisa de dinheiro hoje,sintetico_grupo
+C013,whatsapp,como saber se é mesmo meu amigo que está mandando mensagem,sintetico_grupo
+C014,whatsapp,falaram que estavam com o celular de outra pessoa e pediram uma transferência,sintetico_grupo
+C015,whatsapp,um conhecido pediu o código de seis dígitos que chegou no meu whatsapp,sintetico_grupo
+C016,whatsapp,estão usando meu nome e minha foto para pedir dinheiro,sintetico_grupo
+C017,whatsapp,recebi um áudio parecendo a voz da minha mãe pedindo pix,sintetico_grupo
+C018,whatsapp,uma pessoa no direct do insta fingiu ser meu colega e pediu dinheiro,sintetico_grupo
+C019,whatsapp,perfil falso de familiar pedindo ajuda urgente,sintetico_grupo
+C020,whatsapp,meu vizinho mandou mensagem de um número estranho pedindo dinheiro,sintetico_grupo
+C021,wifi,é perigoso usar o wifi da escola,sintetico_grupo
+C022,wifi,posso entrar no app do banco na rede do restaurante,sintetico_grupo
+C023,wifi,a rede gratuita da rodoviária é segura,sintetico_grupo
+C024,wifi,conectei no wifi aberto do parque,sintetico_grupo
+C025,wifi,apareceram várias redes com o nome do shopping,sintetico_grupo
+C026,wifi,devo usar meus dados móveis ou a internet da lanchonete,sintetico_grupo
+C027,wifi,o wifi do evento pediu meu telefone e email para liberar,sintetico_grupo
+C028,wifi,dá pra fazer compra online na internet pública,sintetico_grupo
+C029,wifi,o navegador mostrou aviso de conexão não segura no wifi do hotel,sintetico_grupo
+C030,wifi,meu celular se conecta sozinho em redes abertas,sintetico_grupo
+C031,wifi,usar a internet grátis da praça é arriscado,sintetico_grupo
+C032,wifi,qual o risco de rede sem senha,sintetico_grupo
+C033,wifi,rede aberta com o nome do café mas o atendente disse que não é deles,sintetico_grupo
+C034,wifi,posso entrar nas minhas redes sociais usando wifi público,sintetico_grupo
+C035,wifi,é melhor usar 4g ou o wifi da biblioteca para pagar algo,sintetico_grupo
+C036,wifi,conectei numa rede chamada free wifi,sintetico_grupo
+C037,wifi,o wifi do metrô pede cadastro com cpf,sintetico_grupo
+C038,wifi,é seguro jogar online na rede do shopping,sintetico_grupo
+C039,wifi,a internet do aeroporto é confiável para acessar o email,sintetico_grupo
+C040,wifi,wifi de graça na rua tem perigo,sintetico_grupo
+C041,pix,paguei por pix e não recebi o produto,sintetico_grupo
+C042,pix,fiz um pix errado e a pessoa não quer devolver,sintetico_grupo
+C043,pix,caí no golpe do pix o que faço,sintetico_grupo
+C044,pix,transferi dinheiro para uma loja falsa,sintetico_grupo
+C045,pix,o vendedor do marketplace pediu para pagar fora do site,sintetico_grupo
+C046,pix,me pediram uma taxa por pix para liberar um prêmio,sintetico_grupo
+C047,pix,mandei dinheiro achando que era um amigo e era golpe,sintetico_grupo
+C048,pix,como pedir o dinheiro de volta depois de um golpe,sintetico_grupo
+C049,pix,recebi mensagem dizendo que meu pix foi bloqueado e preciso clicar,sintetico_grupo
+C050,pix,comprei ingresso de um desconhecido por pix,sintetico_grupo
+C051,pix,a pessoa pediu para eu devolver um pix que ela mandou por engano,sintetico_grupo
+C052,pix,paguei a entrada de um produto e o vendedor me bloqueou,sintetico_grupo
+C053,pix,o banco pode cancelar uma transferência feita para golpista,sintetico_grupo
+C054,pix,fiz transferência e depois percebi que era fraude,sintetico_grupo
+C055,pix,pediram pix adiantado para vender um celular barato,sintetico_grupo
+C056,pix,guardei o comprovante do pix do golpe o que mais faço,sintetico_grupo
+C057,pix,mandaram eu pagar mais um valor para liberar o estorno,sintetico_grupo
+C058,pix,minha compra na loja do instagram nunca chegou,sintetico_grupo
+C059,pix,usaram minha chave pix sem eu saber,sintetico_grupo
+C060,pix,perdi dinheiro num golpe de venda online,sintetico_grupo
+C061,boato,recebi uma corrente dizendo para compartilhar com dez pessoas,sintetico_grupo
+C062,boato,essa notícia que está no grupo da sala é verdade,sintetico_grupo
+C063,boato,vi um vídeo viral sem fonte nenhuma,sintetico_grupo
+C064,boato,como checar se uma informação é falsa,sintetico_grupo
+C065,boato,minha família acredita em tudo que chega no grupo,sintetico_grupo
+C066,boato,um áudio diz que vai ter apagão na cidade,sintetico_grupo
+C067,boato,essa foto parece editada,sintetico_grupo
+C068,boato,uma notícia antiga voltou a circular como se fosse nova,sintetico_grupo
+C069,boato,vídeo com montagem de um famoso falando coisas,sintetico_grupo
+C070,boato,mensagem dizendo que o whatsapp vai começar a cobrar,sintetico_grupo
+C071,boato,postaram que as aulas foram canceladas mas a escola não falou nada,sintetico_grupo
+C072,boato,como saber se um site de notícias é confiável,sintetico_grupo
+C073,boato,recebi um alerta de sequestro que pede para repassar,sintetico_grupo
+C074,boato,print de uma suposta conversa de um político,sintetico_grupo
+C075,boato,todo mundo está compartilhando uma informação que eu não sei se é real,sintetico_grupo
+C076,boato,uma página de fofoca publicou algo sem prova,sintetico_grupo
+C077,boato,dizem que um remédio caseiro cura doença grave,sintetico_grupo
+C078,boato,é fake news ou verdade,sintetico_grupo
+C079,boato,um tiktok falando de um perigo que eu nunca ouvi falar,sintetico_grupo
+C080,boato,recebi uma notícia com título exagerado e cheia de erros,sintetico_grupo
+C081,senha,minha senha é 123456,sintetico_grupo
+C082,senha,meu amigo pediu minha senha para jogar na minha conta,sintetico_grupo
+C083,senha,como criar uma senha forte e fácil de lembrar,sintetico_grupo
+C084,senha,alguém entrou na minha conta do jogo,sintetico_grupo
+C085,senha,invadiram meu instagram e trocaram a senha,sintetico_grupo
+C086,senha,uso a mesma senha no email e nas redes sociais,sintetico_grupo
+C087,senha,o que é autenticação de dois fatores,sintetico_grupo
+C088,senha,deixei minha conta logada no celular de um amigo,sintetico_grupo
+C089,senha,recebi aviso de login de outro aparelho,sintetico_grupo
+C090,senha,devo anotar minhas senhas num papel,sintetico_grupo
+C091,senha,perdi o acesso à minha conta,sintetico_grupo
+C092,senha,meu email foi hackeado,sintetico_grupo
+C093,senha,é seguro salvar a senha no navegador,sintetico_grupo
+C094,senha,meu irmão sabe minha senha,sintetico_grupo
+C095,senha,como proteger minha conta do tiktok,sintetico_grupo
+C096,senha,minha senha vazou,sintetico_grupo
+C097,senha,usaram minha conta para postar coisas que eu não postei,sintetico_grupo
+C098,senha,de quanto em quanto tempo devo trocar a senha,sintetico_grupo
+C099,senha,a senha do meu jogo é o nome do meu cachorro,sintetico_grupo
+C100,senha,entraram no meu discord sem eu deixar,sintetico_grupo
+C101,phishing,ganhei um sorteio que eu nem participei,sintetico_grupo
+C102,phishing,mensagem com link para ganhar robux grátis,sintetico_grupo
+C103,phishing,email dizendo que preciso atualizar meus dados senão perco a conta,sintetico_grupo
+C104,phishing,sms falando que tenho uma encomenda parada nos correios,sintetico_grupo
+C105,phishing,cliquei num link e pediu meu login,sintetico_grupo
+C106,phishing,site parecido com o da loja mas com endereço estranho,sintetico_grupo
+C107,phishing,propaganda de celular muito barato com link,sintetico_grupo
+C108,phishing,recebi um link encurtado de alguém que não conheço,sintetico_grupo
+C109,phishing,mensagem dizendo que minha conta do instagram vai ser excluída,sintetico_grupo
+C110,phishing,email de promoção com erro de português e link,sintetico_grupo
+C111,phishing,um site pediu meus dados do cartão para liberar um brinde,sintetico_grupo
+C112,phishing,link de cupom de desconto que chegou no grupo,sintetico_grupo
+C113,phishing,recebi um qr code estranho por mensagem,sintetico_grupo
+C114,phishing,página falsa do banco pedindo senha,sintetico_grupo
+C115,phishing,alguém mandou link dizendo olha essa foto sua,sintetico_grupo
+C116,phishing,email dizendo que tenho uma multa e precisa clicar para pagar,sintetico_grupo
+C117,phishing,ganhe moedas no jogo é só fazer login neste site,sintetico_grupo
+C118,phishing,mensagem de uma empresa pedindo para confirmar meu cpf no link,sintetico_grupo
+C119,phishing,anúncio de vaga de emprego pedindo cadastro com dados bancários,sintetico_grupo
+C120,phishing,entrei num site que pediu para baixar um arquivo,sintetico_grupo
+C121,falso_suporte,ligaram dizendo que são da central do cartão,sintetico_grupo
+C122,falso_suporte,um atendente pediu para eu instalar um app de acesso remoto,sintetico_grupo
+C123,falso_suporte,pessoa dizendo ser do suporte do instagram pediu minha senha,sintetico_grupo
+C124,falso_suporte,me ligaram falando que minha conta do banco foi invadida e pediram o código,sintetico_grupo
+C125,falso_suporte,um moderador do jogo quer minha senha para verificar a conta,sintetico_grupo
+C126,falso_suporte,falso funcionário da operadora pediu código por sms,sintetico_grupo
+C127,falso_suporte,suporte técnico pediu para controlar meu computador,sintetico_grupo
+C128,falso_suporte,alguém do suporte da loja pediu meus dados pessoais,sintetico_grupo
+C129,falso_suporte,recebi ligação de um número dizendo ser do banco,sintetico_grupo
+C130,falso_suporte,um admin do servidor pediu para eu baixar um programa,sintetico_grupo
+C131,falso_suporte,a central de atendimento pediu o código que chegou no meu celular,sintetico_grupo
+C132,falso_suporte,uma pessoa disse que é da equipe do jogo e vai banir minha conta,sintetico_grupo
+C133,falso_suporte,o atendente mandou eu digitar uma sequência no celular,sintetico_grupo
+C134,falso_suporte,disseram que são da empresa e precisam do código para cancelar uma compra,sintetico_grupo
+C135,falso_suporte,técnico desconhecido quer acesso ao meu celular para consertar,sintetico_grupo
+C136,falso_suporte,um perfil de suporte oficial me chamou no direct,sintetico_grupo
+C137,falso_suporte,ligação automática pedindo para digitar minha senha,sintetico_grupo
+C138,falso_suporte,falaram que são do suporte e pediram para eu compartilhar a tela,sintetico_grupo
+C139,falso_suporte,suposto atendente pediu foto do meu documento,sintetico_grupo
+C140,falso_suporte,alguém dizendo trabalhar no aplicativo pediu meu login,sintetico_grupo
+C141,privacidade,um app de lanterna pediu acesso aos contatos,sintetico_grupo
+C142,privacidade,como deixar meu perfil privado,sintetico_grupo
+C143,privacidade,postei foto mostrando a frente da minha casa,sintetico_grupo
+C144,privacidade,devo colocar minha idade e cidade na bio,sintetico_grupo
+C145,privacidade,um aplicativo quer acessar minha galeria inteira,sintetico_grupo
+C146,privacidade,quem pode ver meus stories,sintetico_grupo
+C147,privacidade,compartilhei minha localização em tempo real numa foto,sintetico_grupo
+C148,privacidade,um site pediu meu cpf para fazer um teste de personalidade,sintetico_grupo
+C149,privacidade,estranhos estão vendo minhas fotos,sintetico_grupo
+C150,privacidade,como tirar permissão de câmera de um app,sintetico_grupo
+C151,privacidade,um jogo pede acesso aos meus contatos e ao microfone,sintetico_grupo
+C152,privacidade,publiquei meu número de telefone sem querer,sintetico_grupo
+C153,privacidade,o aplicativo sabe onde eu estou o tempo todo,sintetico_grupo
+C154,privacidade,postei foto do meu documento da escola,sintetico_grupo
+C155,privacidade,um formulário online pediu dados demais,sintetico_grupo
+C156,privacidade,como esconder minha lista de seguidores,sintetico_grupo
+C157,privacidade,marcaram minha localização num post,sintetico_grupo
+C158,privacidade,um desconhecido sabe o nome da minha escola pelas minhas fotos,sintetico_grupo
+C159,privacidade,quais informações não devo postar,sintetico_grupo
+C160,privacidade,um app de filtro pediu acesso a tudo no meu celular,sintetico_grupo
+C161,fora_do_escopo,qual o jogo mais jogado do mundo?,sintetico_grupo
+C162,fora_do_escopo,como eu subo de nível mais rápido no jogo?,sintetico_grupo
+C163,fora_do_escopo,qual personagem é melhor pra iniciante?,sintetico_grupo
+C164,fora_do_escopo,que horas abre o servidor novo do jogo?,sintetico_grupo
+C165,fora_do_escopo,me fala umas dicas pra ganhar partida ranqueada,sintetico_grupo
+C166,fora_do_escopo,"meu celular tá esquentando muito quando eu jogo, é normal?",sintetico_grupo
+C167,fora_do_escopo,como aumento a duração da bateria do celular?,sintetico_grupo
+C168,fora_do_escopo,qual a diferença entre iphone e android?,sintetico_grupo
+C169,fora_do_escopo,como faço print da tela do celular?,sintetico_grupo
+C170,fora_do_escopo,como mudo o papel de parede do celular?,sintetico_grupo
+C171,fora_do_escopo,como posto um reels no instagram?,sintetico_grupo
+C172,fora_do_escopo,como coloco música no story?,sintetico_grupo
+C173,fora_do_escopo,quantos seguidores tem o maior perfil do tiktok?,sintetico_grupo
+C174,fora_do_escopo,qual a música do momento?,sintetico_grupo
+C175,fora_do_escopo,me indica um cantor parecido com a anitta,sintetico_grupo
+C176,fora_do_escopo,quem é o artilheiro do campeonato?,sintetico_grupo
+C177,fora_do_escopo,como treinar pra correr mais rápido?,sintetico_grupo
+C178,fora_do_escopo,qual a melhor receita de brigadeiro?,sintetico_grupo
+C179,fora_do_escopo,o que eu faço pro almoço hoje?,sintetico_grupo
+C180,fora_do_escopo,como estudar pra prova de história?,sintetico_grupo
+C181,fora_do_escopo,me explica o que é fotossíntese,sintetico_grupo
+C182,fora_do_escopo,quanto é 15 vezes 12?,sintetico_grupo
+C183,fora_do_escopo,como escrever a introdução de uma redação?,sintetico_grupo
+C184,fora_do_escopo,qual a diferença entre mitose e meiose?,sintetico_grupo
+C185,fora_do_escopo,me ajuda a fazer um resumo do livro,sintetico_grupo
+C186,fora_do_escopo,qual o melhor anime pra começar?,sintetico_grupo
+C187,fora_do_escopo,que filme de comédia você recomenda?,sintetico_grupo
+C188,fora_do_escopo,vale a pena comprar um fone sem fio?,sintetico_grupo
+C189,fora_do_escopo,qual o tênis mais confortável pra ir pra escola?,sintetico_grupo
+C190,fora_do_escopo,como cuidar de espinha no rosto?,sintetico_grupo
+C191,fora_do_escopo,quantas horas eu devo dormir por noite?,sintetico_grupo
+C192,fora_do_escopo,como faço amizade na escola nova?,sintetico_grupo
+C193,fora_do_escopo,qual a capital do japão?,sintetico_grupo
+C194,fora_do_escopo,quantos planetas tem o sistema solar?,sintetico_grupo
+C195,fora_do_escopo,como se fala obrigado em inglês?,sintetico_grupo
+C196,fora_do_escopo,me conta uma curiosidade,sintetico_grupo
+C197,fora_do_escopo,oi tudo bem?,sintetico_grupo
+C198,fora_do_escopo,obrigado pela ajuda,sintetico_grupo
+C199,fora_do_escopo,quem criou você?,sintetico_grupo
+C200,fora_do_escopo,qual é o seu nome?,sintetico_grupo
+C201,fora_do_escopo,como faço slime em casa?,sintetico_grupo
+C202,fora_do_escopo,qual a melhor cor pra pintar o quarto?,sintetico_grupo
+C203,fora_do_escopo,como montar um pc gamer barato?,sintetico_grupo
+C204,fora_do_escopo,como ganhar dinheiro sendo streamer?,sintetico_grupo
+C205,fora_do_escopo,qual o melhor horário pra postar foto?,sintetico_grupo
+C206,fora_do_escopo,como edito um vídeo no celular?,sintetico_grupo
+C207,pix,"comprei um fone pela internet, paguei e nunca chegou",sintetico_grupo
+C208,pix,paguei uma compra num site e a loja sumiu,sintetico_grupo
+C209,privacidade,um cadastro de sorteio quer meu endereço e o nome do meu pai,sintetico_grupo
+C210,privacidade,um site pediu o nome completo dos meus pais e onde eu moro,sintetico_grupo

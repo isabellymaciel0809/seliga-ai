@@ -1,0 +1,105 @@
+pergunta,tema_esperado,lote
+alguém criou um perfil falso com minhas fotos e tá pedindo dinheiro pros meus amigos,whatsapp,validacao
+minha tia recebeu mensagem de um número estranho dizendo que era eu,whatsapp,validacao
+um contato salvo como meu irmão pediu pra eu fazer uma transferência urgente,whatsapp,validacao
+me mandaram msg no whats fingindo ser minha prima,whatsapp,validacao
+o golpista usou a foto do meu pai no perfil,whatsapp,validacao
+é seguro usar a internet da biblioteca pra entrar no meu email?,wifi,validacao
+"conectei numa rede sem senha na praça, tem problema?",wifi,validacao
+a rede do hotel pediu meu cpf pra conectar,wifi,validacao
+posso comprar uma skin usando a internet do shopping?,wifi,validacao
+meu celular conectou sozinho numa rede aberta,wifi,validacao
+mandei dinheiro pra pessoa errada sem querer,pix,validacao
+"comprei um celular pela internet, paguei e não chegou",pix,validacao
+o vendedor da loja online pediu pra pagar por fora,pix,validacao
+"caí num golpe e transferi 200 reais, e agora?",pix,validacao
+me pediram um pix pra liberar um prêmio,pix,validacao
+"vi um vídeo dizendo que o celular vai explodir se carregar de noite, é verdade?",boato,validacao
+meu avô compartilhou uma corrente no grupo da família,boato,validacao
+como saber se uma notícia é fake?,boato,validacao
+apareceu um áudio dizendo que vai faltar água na cidade toda,boato,validacao
+recebi um print de uma conversa que parece montagem,boato,validacao
+meu namorado quer minha senha do instagram,senha,validacao
+qual a melhor senha pra minha conta do jogo?,senha,validacao
+esqueci de sair da minha conta no computador da escola,senha,validacao
+"uso a data do meu aniversário como senha, tem problema?",senha,validacao
+como ativo a verificação em duas etapas no meu email?,senha,validacao
+chegou um email dizendo que minha conta da netflix foi suspensa,phishing,validacao
+recebi sms com link pra rastrear uma encomenda que eu não comprei,phishing,validacao
+um site pediu meu login do jogo pra dar diamantes grátis,phishing,validacao
+cliquei num link estranho que um amigo mandou,phishing,validacao
+apareceu uma propaganda dizendo que ganhei um iphone,phishing,validacao
+ligaram dizendo que eram do banco e pediram minha senha,falso_suporte,validacao
+um moderador do discord pediu pra eu instalar um programa,falso_suporte,validacao
+alguém falando que é da operadora pediu um código,falso_suporte,validacao
+o suporte do jogo me chamou no privado pedindo acesso à minha conta,falso_suporte,validacao
+um técnico pediu pra eu baixar um app pra ele mexer no meu celular,falso_suporte,validacao
+um jogo pediu acesso ao meu microfone,privacidade,validacao
+"meu perfil é aberto, devo deixar privado?",privacidade,validacao
+postei uma foto com o uniforme da escola,privacidade,validacao
+um app quer saber minha localização o tempo todo,privacidade,validacao
+um formulário pediu meu endereço e o nome da minha mãe,privacidade,validacao
+um cara com a foto do meu tio me chamou pedindo grana emprestada,whatsapp,final
+minha amiga falou que eu mandei mensagem pedindo pix mas não fui eu,whatsapp,final
+número desconhecido dizendo ser minha mãe com o celular quebrado,whatsapp,final
+tem perigo entrar no instagram usando o wifi do ônibus?,wifi,final
+"no aeroporto tem duas redes com o mesmo nome, qual eu uso?",wifi,final
+dá pra pagar uma conta usando a internet do café?,wifi,final
+fiz um pix pra comprar ingresso e o perfil sumiu,pix,final
+"transferi dinheiro pra um golpista, consigo de volta?",pix,final
+a pessoa pediu pra eu mandar o pix antes de enviar o produto,pix,final
+"recebi uma mensagem dizendo que a escola vai fechar amanhã, como confiro?",boato,final
+tão espalhando que um famoso morreu mas não achei em nenhum site,boato,final
+"um post diz que uma vacina faz mal, mas não mostra de onde tirou",boato,final
+minha melhor amiga pediu minha senha do tiktok,senha,final
+"coloquei a mesma senha em tudo, devo trocar?",senha,final
+como faço pra minha conta ficar mais protegida?,senha,final
+recebi email do banco pedindo pra clicar e confirmar meus dados,phishing,final
+"uma mensagem disse que eu ganhei um vale-presente, é só preencher um cadastro",phishing,final
+o link que chegou por sms tem um endereço esquisito,phishing,final
+uma pessoa dizendo ser da central do banco pediu pra eu instalar um aplicativo,falso_suporte,final
+no chat do jogo um admin pediu meu código de login,falso_suporte,final
+me ligaram falando que meu cartão foi clonado e pediram o código do sms,falso_suporte,final
+um aplicativo de edição de foto quer acessar todos os meus contatos,privacidade,final
+"coloquei o nome da minha escola na bio, é perigoso?",privacidade,final
+um quiz online pediu minha data de nascimento e meu telefone,privacidade,final
+um perfil com a foto da minha irmã pediu pra eu pagar um boleto pra ela,whatsapp,cego
+meu primo disse que trocou de número e quer 300 reais emprestado,whatsapp,cego
+estão usando meu nome no zap pra pedir dinheiro pros meus contatos,whatsapp,cego
+"chegou msg dizendo 'oi filho, esse é meu número novo, salva aí'",whatsapp,cego
+o wifi grátis da rodoviária é seguro pra mexer no banco?,wifi,cego
+tem problema fazer compras online na rede da lanchonete?,wifi,cego
+a rede aberta do parque pediu login com meu facebook,wifi,cego
+"deixo o wi-fi do celular sempre ligado procurando rede, é ruim?",wifi,cego
+vendi um videogame e o comprador mandou um comprovante de pix falso,pix,cego
+paguei um pix pra uma loja do instagram e não recebi nada,pix,cego
+o cara me mandou um qr code e pediu pix pra reservar o produto,pix,cego
+"caí no golpe do pix, o banco pode me devolver?",pix,cego
+"no grupo da turma tão dizendo que a prova foi cancelada, como sei se é real?",boato,cego
+meu tio mandou um vídeo dizendo que o governo vai bloquear o whatsapp,boato,cego
+"um áudio no grupo diz que tem sequestrador perto da escola, devo repassar?",boato,cego
+como checar se uma foto que tá viralizando é montagem?,boato,cego
+"minha senha é o nome do meu cachorro, tá fraca?",senha,cego
+alguém entrou na minha conta do roblox e trocou o email,senha,cego
+"anotei minhas senhas num papel na mochila, é ruim?",senha,cego
+como eu crio uma senha forte que eu consiga lembrar?,senha,cego
+chegou sms dizendo que minha conta do banco vai ser bloqueada e mandou um link,phishing,cego
+"recebi um email da loja dizendo que tenho um cupom, mas o endereço é estranho",phishing,cego
+um site de robux grátis pediu meu usuário e senha,phishing,cego
+cliquei num anúncio de promoção e abriu uma página pedindo meus dados,phishing,cego
+um cara dizendo ser da microsoft falou que meu computador tem vírus e quer acesso,falso_suporte,cego
+o atendente da operadora ligou pedindo pra eu ditar o código do sms,falso_suporte,cego
+no discord alguém da equipe do servidor pediu meu token pra verificar a conta,falso_suporte,cego
+me chamaram dizendo que eram do suporte do whatsapp e pediram meu código,falso_suporte,cego
+um desconhecido no jogo perguntou em que escola eu estudo,privacidade,cego
+"postei story mostrando a frente da minha casa, tem problema?",privacidade,cego
+um app de lanterna pediu acesso à minha câmera e aos contatos,privacidade,cego
+devo deixar minha localização compartilhada no snapchat?,privacidade,cego
+qual o melhor celular pra comprar até mil reais?,fora_do_escopo,cego
+quem ganhou o jogo do flamengo ontem?,fora_do_escopo,cego
+me indica uma série boa pra assistir,fora_do_escopo,cego
+qual a fórmula de bhaskara?,fora_do_escopo,cego
+que horas começa o show hoje?,fora_do_escopo,cego
+como faço miojo?,fora_do_escopo,cego
+me recomenda um jogo de terror pra jogar com os amigos,fora_do_escopo,cego
+qual a previsão do tempo pra amanhã?,fora_do_escopo,cego

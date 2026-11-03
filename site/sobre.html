@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fica Esperto AI · Sobre o projeto</title>
+  <meta name="description" content="Problema, método e resultados do assistente de segurança digital para adolescentes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='.15' stop-color='%23da291c'/%3E%3Cstop offset='.9' stop-color='%230000ff'/%3E%3C/linearGradient%3E%3Cpath d='M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z' fill='url(%23d)'/%3E%3Cpath d='m16.5 24.5 5 5 10-11' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#05050f">
+  <script>/* aplica tema e contraste salvos antes de desenhar, para a tela não piscar */try{var d=document.documentElement;if(localStorage.getItem("fe_tema")==="claro")d.dataset.tema="claro";if(localStorage.getItem("fe_contraste")==="alto")d.dataset.contraste="alto"}catch(e){}</script>
+</head>
+<body data-pagina="sobre">
+  <div class="casca">
+    <div id="topo-site"></div>
+    <main id="conteudo" class="conteudo">
+      <section class="hero">
+        <h1>Assistente de IA para Segurança Digital para Adolescentes</h1>
+        <p>Um assistente virtual pode ajudar adolescentes a reconhecer golpes e adotar práticas mais seguras na internet?</p>
+      </section>
+
+      <section class="secao revelar">
+        <h2>O problema</h2>
+        <p>Adolescentes passam boa parte do dia em redes sociais, jogos e aplicativos de mensagem, e estão expostos a golpes no WhatsApp,
+          links falsos, perfis falsos, vazamento de dados e notícias falsas. Orientações de segurança costumam ser escritas para adultos,
+          em linguagem formal. O Fica Esperto AI adapta essas orientações para o jeito como adolescentes falam e escrevem.</p>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Como o assistente funciona</h2>
+        <ol class="passos-fluxo">
+          <li class="cartao"><strong>Proteção</strong><br>Bloqueia mensagens com CPF, senha ou código.</li>
+          <li class="cartao"><strong>Normalização</strong><br>Tira acentos e traduz gírias ("zap" → WhatsApp).</li>
+          <li class="cartao"><strong>Escopo</strong><br>Percebe quando a pergunta não é sobre segurança.</li>
+          <li class="cartao"><strong>Classificação</strong><br>Um modelo de IA escolhe 1 entre 8 temas.</li>
+          <li class="cartao"><strong>Confirmação</strong><br>Em dúvida, pergunta: "é sobre A ou B?".</li>
+          <li class="cartao"><strong>Resposta revisada</strong><br>Passos curtos, exemplo, atenção e referência.</li>
+        </ol>
+        <p class="instrucao">Não é um ChatGPT: o assistente nunca inventa orientações. Ele só escolhe entre respostas escritas e revisadas antes,
+          o que evita prometer procedimentos errados. Tudo roda no navegador, sem servidor e sem guardar conversas.</p>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Resultados</h2>
+        <p class="instrucao">Comparação com o chatbot do notebook de exemplo da professora (baseline), nas mesmas perguntas.</p>
+        <div id="tiles" class="tiles"></div>
+      </section>
+
+      <section class="secao cartao revelar">
+        <h2 style="margin-top:0">Perguntas respondidas corretamente</h2>
+        <div class="legenda" aria-hidden="true">
+          <span><i style="background:var(--serie-baseline)"></i>Baseline (exemplo)</span>
+          <span><i style="background:var(--serie-assistente)"></i>Fica Esperto AI</span>
+        </div>
+        <div id="grafico" class="grafico" role="img"></div>
+        <details>
+          <summary>Ver os dados em tabela</summary>
+          <table class="dados" id="tabela"></table>
+        </details>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Hipóteses</h2>
+        <div class="grade">
+          <article class="cartao">
+            <span class="selo neutro">H1</span>
+            <h3 style="margin-top:8px">O assistente responde corretamente às dúvidas frequentes</h3>
+            <p id="h1"></p>
+          </article>
+          <article class="cartao">
+            <span class="selo neutro">H2</span>
+            <h3 style="margin-top:8px">Linguagem simples ajuda a entender os riscos</h3>
+            <p id="h2"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Limitações</h2>
+        <ul>
+          <li>Responde apenas aos 8 temas da base de conhecimento.</li>
+          <li>As perguntas de validação foram escritas pelo grupo, não por adolescentes: o teste com usuários reais é a confirmação mais importante.</li>
+          <li>A regra de escopo erra para os dois lados: algumas perguntas fora do assunto ainda recebem uma resposta de segurança, e algumas perguntas válidas mas vagas (como "como faço pra minha conta ficar mais protegida?") são recusadas.</li>
+          <li>Não substitui a orientação de responsáveis, da escola, do banco ou de profissionais.</li>
+        </ul>
+      </section>
+
+      <section class="secao revelar" id="secao-equipe" hidden>
+        <h2>Quem fez</h2>
+        <div id="equipe" class="equipe"></div>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Realização</h2>
+        <div class="realizacao">
+          <img src="img/claro.svg" alt="Claro" width="72" height="72" loading="lazy">
+          <p>Projeto educativo desenvolvido no bootcamp da SoulCode Academy, com apoio da Claro e da Favela Gaming.
+            O Fica Esperto AI não é um canal oficial de nenhuma delas: ninguém vai pedir senha, código ou Pix por este site.</p>
+        </div>
+      </section>
+
+      <section class="secao revelar">
+        <h2>Fontes</h2>
+        <ul>
+          <li>Base de dados fornecida para a disciplina (perguntas, temas e respostas revisadas).</li>
+          <li>Notebook de exemplo da professora: baseline, alertas e referências institucionais.</li>
+          <li>Cartilha de Segurança para Internet (CERT.br), Banco Central do Brasil, ANPD e Central de Ajuda do WhatsApp.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/comum.js" defer></script>
+  <script src="js/formatar.js" defer></script>
+  <script src="js/metricas.js" defer></script>
+  <script src="js/sobre.js" defer></script>
+</body>
+</html>

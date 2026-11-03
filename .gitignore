@@ -1,0 +1,14 @@
+# Ambiente Python local
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Arquivos temporários do Word e cópias salvas com nome errado
+~$*
+*..docx
+
+# Notebook de exemplo da professora (material da disciplina)
+Projeto_2_Seguranca_Digital_Exemplo_Funcional.ipynb
+
+# Respostas da avaliação com adolescentes (dados dos participantes)
+avaliacao_*.csv

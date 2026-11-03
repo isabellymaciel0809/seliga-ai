@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fica Esperto AI · Segurança digital para adolescentes</title>
+  <meta name="description" content="Assistente educativo que ajuda adolescentes a reconhecer golpes e se proteger na internet.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='.15' stop-color='%23da291c'/%3E%3Cstop offset='.9' stop-color='%230000ff'/%3E%3C/linearGradient%3E%3Cpath d='M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z' fill='url(%23d)'/%3E%3Cpath d='m16.5 24.5 5 5 10-11' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#05050f">
+  <script>/* aplica tema e contraste salvos antes de desenhar, para a tela não piscar */try{var d=document.documentElement;if(localStorage.getItem("fe_tema")==="claro")d.dataset.tema="claro";if(localStorage.getItem("fe_contraste")==="alto")d.dataset.contraste="alto"}catch(e){}</script>
+  <script>
+    // A abertura aparece uma vez por visita (ou sempre, com index.html?abertura). Decidido antes de desenhar a página.
+    try {
+      if (location.search.includes("abertura") || !sessionStorage.getItem("fe_abertura_vista")) {
+        document.documentElement.classList.add("com-abertura");
+      }
+    } catch (e) { document.documentElement.classList.add("com-abertura"); }
+  </script>
+</head>
+<body data-pagina="inicio" class="pagina-inicio">
+
+  <!-- ===================== Abertura ===================== -->
+  <div id="abertura" class="abertura" role="dialog" aria-modal="true" aria-label="Abertura do Fica Esperto AI">
+    <canvas id="abertura-canvas" aria-hidden="true"></canvas>
+    <div class="abertura-centro">
+      <svg id="abertura-escudo" class="abertura-escudo" viewBox="0 0 48 48" aria-hidden="true">
+        <linearGradient id="degrade-abertura" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0.15" stop-color="#da291c"/><stop offset="0.9" stop-color="#0000ff"/>
+        </linearGradient>
+        <path d="M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z" fill="url(#degrade-abertura)"/>
+        <path class="abertura-check" d="m16.5 24.5 5 5 10-11" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1 id="abertura-titulo" class="abertura-titulo" aria-label="Fica Esperto AI"></h1>
+      <p class="abertura-sub">Segurança digital para adolescentes</p>
+      <button id="abertura-entrar" class="abertura-entrar" type="button">Entrar <span data-icone="seta"></span></button>
+    </div>
+    <button id="abertura-pular" class="abertura-pular" type="button">Pular</button>
+  </div>
+
+  <div class="casca">
+    <div id="topo-site"></div>
+
+    <main id="conteudo">
+      <!-- ===================== Capa ===================== -->
+      <section class="capa-escura">
+        <div class="capa-texto">
+          <p class="sobretitulo revelar">Assistente de IA · Segurança digital</p>
+          <h1 class="revelar">Golpe na internet<br><span class="texto-degrade">não avisa que é golpe.</span></h1>
+          <p class="revelar">O Fica Esperto AI te ajuda a reconhecer golpes no WhatsApp, links falsos, Pix suspeito e outros riscos,
+            e diz o que fazer, do jeito que você fala.</p>
+          <form id="pergunta-rapida" class="entrada capa-entrada revelar" autocomplete="off">
+            <label for="pergunta-inicio" class="sr-only">Conte o que aconteceu</label>
+            <input id="pergunta-inicio" type="text" maxlength="300" placeholder="Ex.: um cara no zap pediu o código do meu celular" required>
+            <button type="submit" class="enviar" aria-label="Perguntar ao assistente">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5l3 8.5-3 8.5Zm3-8.5h8"/></svg>
+            </button>
+          </form>
+          <p class="capa-aviso revelar"><span data-icone="cadeado"></span> Nunca escreva senha, CPF ou códigos. Nada do que você escreve é salvo.</p>
+        </div>
+        <div class="capa-escudo" id="capa-escudo" aria-hidden="true"></div>
+        <a class="rolar-dica" href="#frase" aria-label="Rolar para saber mais"><span></span></a>
+      </section>
+
+      <!-- ===================== Frase que acende ===================== -->
+      <section id="frase" class="frase-acende" aria-label="Golpistas usam pressa, medo e confiança. O Fica Esperto AI usa informação.">
+        <div class="frase-fixa">
+          <p id="frase-texto" aria-hidden="true">Golpistas usam <em class="perigo">pressa,</em> <em class="perigo">medo</em> e <em class="perigo">confiança.</em>
+            O Fica Esperto AI usa <em class="solucao">informação.</em></p>
+        </div>
+      </section>
+
+      <!-- ===================== Como funciona (celular fixo) ===================== -->
+      <section class="historia" aria-labelledby="titulo-historia">
+        <h2 id="titulo-historia" class="titulo-secao revelar">Como o assistente pensa</h2>
+        <p class="subtitulo-secao revelar">Role a tela e veja o que acontece com a sua mensagem, passo a passo. Os passos 4 a 6 rodam o modelo de verdade.</p>
+        <div class="historia-grade">
+          <div class="historia-passos">
+            <article class="passo-historia" data-passo="1">
+              <span class="numero-passo">01</span>
+              <h3>Proteção primeiro</h3>
+              <p>Antes de tudo, o assistente procura dados pessoais, como CPF, senha ou código. Se encontrar, ele avisa e não continua.</p>
+            </article>
+            <article class="passo-historia" data-passo="2">
+              <span class="numero-passo">02</span>
+              <h3>Entende o seu jeito de escrever</h3>
+              <p>Tira acentos e traduz gírias e abreviações para os termos da base: "zap" vira WhatsApp, "q chegou" vira código de verificação.</p>
+            </article>
+            <article class="passo-historia" data-passo="3">
+              <span class="numero-passo">03</span>
+              <h3>Sabe quando não sabe</h3>
+              <p>Se a pergunta não tem nada a ver com segurança digital, ele não inventa: avisa que o assunto está fora da base.</p>
+            </article>
+            <article class="passo-historia" data-passo="4">
+              <span class="numero-passo">04</span>
+              <h3>Escolhe o tema</h3>
+              <p>Um modelo de IA treinado com centenas de exemplos calcula a chance de cada um dos 8 temas. Os números ao lado são reais.</p>
+            </article>
+            <article class="passo-historia" data-passo="5">
+              <span class="numero-passo">05</span>
+              <h3>Na dúvida, pergunta</h3>
+              <p>Quando dois temas ficam empatados, ele não chuta: pergunta para você qual dos dois é o certo.</p>
+            </article>
+            <article class="passo-historia" data-passo="6">
+              <span class="numero-passo">06</span>
+              <h3>Responde em passos curtos</h3>
+              <p>A resposta vem da base revisada, em linguagem simples, com o que fazer agora e um alerta de atenção.</p>
+            </article>
+          </div>
+          <div class="historia-celular">
+            <div class="celular-moldura">
+              <div class="celular-notch" aria-hidden="true"></div>
+              <div id="celular-telas" class="celular-telas" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Atalhos ===================== -->
+      <section class="secao-escura" aria-labelledby="titulo-comecar">
+        <h2 id="titulo-comecar" class="titulo-secao revelar">Por onde começar</h2>
+        <div class="atalhos">
+          <a class="atalho revelar" href="chat.html">
+            <span class="atalho-icone" data-icone="chat"></span>
+            <strong>Tirar uma dúvida</strong>
+            <span>Conte o que aconteceu e descubra se é golpe e o que fazer.</span>
+            <span class="atalho-seta" data-icone="seta"></span>
+          </a>
+          <a class="atalho revelar" href="simulador.html">
+            <span class="atalho-icone" data-icone="simulador"></span>
+            <strong>Treinar no simulador</strong>
+            <span>Converse com um "golpista" de mentira e veja se você cai.</span>
+            <span class="atalho-seta" data-icone="seta"></span>
+          </a>
+          <a class="atalho revelar" href="quiz.html">
+            <span class="atalho-icone" data-icone="quiz"></span>
+            <strong>Testar no quiz</strong>
+            <span>10 mensagens: é golpe ou não? Descubra quanto você sabe.</span>
+            <span class="atalho-seta" data-icone="seta"></span>
+          </a>
+        </div>
+        <div class="atalhos-menores revelar">
+          <a class="chip" href="checklist.html"><span data-icone="checklist"></span>Checklist de segurança</a>
+          <a class="chip" href="dicas.html"><span data-icone="dicas"></span>Dicas para compartilhar</a>
+          <a class="chip" href="sobre.html"><span data-icone="sobre"></span>Sobre o projeto</a>
+        </div>
+      </section>
+
+      <!-- ===================== Seu progresso (conquistas) ===================== -->
+      <section class="secao-escura" aria-labelledby="titulo-progresso">
+        <h2 id="titulo-progresso" class="titulo-secao revelar">Seu progresso</h2>
+        <p class="subtitulo-secao revelar">Explore o site e desbloqueie conquistas. Tudo fica salvo só neste aparelho, sem cadastro.</p>
+        <div class="progresso-geral revelar">
+          <div class="progresso-texto"><strong id="progresso-numero"></strong><span id="progresso-frase"></span></div>
+          <div class="progresso-trilho" aria-hidden="true"><div id="progresso-barra"></div></div>
+        </div>
+        <div id="medalhas" class="medalhas"></div>
+        <p class="subtitulo-secao"><button type="button" id="zerar-progresso" class="link">Zerar meu progresso</button></p>
+      </section>
+
+      <!-- ===================== Números ===================== -->
+      <section class="secao-escura" aria-labelledby="titulo-numeros">
+        <h2 id="titulo-numeros" class="titulo-secao revelar">Testado antes de chegar em você</h2>
+        <p class="subtitulo-secao revelar">Comparação com o chatbot de exemplo da disciplina, em perguntas que o assistente nunca viu durante o treino.</p>
+        <div id="numeros" class="numeros"></div>
+        <div class="comparativo revelar">
+          <div class="legenda" aria-hidden="true">
+            <span><i style="background:var(--serie-baseline)"></i>Chatbot de exemplo</span>
+            <span><i style="background:var(--serie-assistente)"></i>Fica Esperto AI</span>
+          </div>
+          <div id="barras" class="barras"></div>
+        </div>
+        <p class="subtitulo-secao revelar"><a href="sobre.html">Ver todos os resultados e limitações →</a></p>
+      </section>
+
+      <!-- ===================== Chamada final ===================== -->
+      <section class="chamada-final revelar">
+        <h2>Pronto para ficar esperto?</h2>
+        <a class="botao-principal botao-grande" href="chat.html"><span data-icone="chat"></span>Conversar com o assistente</a>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="js/comum.js" defer></script>
+  <script src="js/formatar.js" defer></script>
+  <script src="js/metricas.js" defer></script>
+  <!-- modelo.js (780 KB) e assistente.js são carregados depois, pelo inicio.js, só para o celular da história -->
+  <script src="js/abertura.js" defer></script>
+  <script src="js/inicio.js" defer></script>
+</body>
+</html>

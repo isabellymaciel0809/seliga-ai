@@ -1,0 +1,25 @@
+﻿caso_id,pergunta,tema_esperado,baseline,score_baseline,acertou_baseline,assistente,score_assistente,acertou_assistente
+5_whatsapp_02,O que devo fazer se uma pessoa se passou por um amigo no aplicativo?,whatsapp,fora_do_escopo,0.499,False,falso_suporte,0.285,False
+5_falso_suporte_08,O que devo fazer se um atendente desconhecido pede meus dados?,falso_suporte,fora_do_escopo,0.403,False,falso_suporte,0.384,True
+5_senha_10,O que devo fazer se recebi um pedido para compartilhar minha senha?,senha,senha,0.514,True,senha,0.444,True
+5_phishing_12,O que devo fazer se recebi um SMS pedindo meus dados bancários?,phishing,fora_do_escopo,0.462,False,phishing,0.697,True
+5_boato_10,O que devo fazer se uma notícia parece falsa e quero verificar?,boato,fora_do_escopo,0.42,False,boato,0.872,True
+5_wifi_07,O que devo fazer se quero fazer uma compra em Wi-Fi de aeroporto?,wifi,wifi,0.441,True,wifi,0.819,True
+5_pix_12,O que devo fazer se recebi mensagem dizendo que meu Pix está bloqueado?,pix,pix,0.49,True,pix,0.692,True
+5_falso_suporte_12,Como agir quando um atendente desconhecido pede meus dados?,falso_suporte,fora_do_escopo,0.379,False,falso_suporte,0.384,True
+5_privacidade_10,O que devo fazer se um site pede informações pessoais demais?,privacidade,fora_do_escopo,0.473,False,privacidade,0.726,True
+5_whatsapp_14,Como agir quando uma pessoa se passou por um amigo no aplicativo?,whatsapp,fora_do_escopo,0.503,False,falso_suporte,0.285,False
+5_phishing_05,Como agir quando recebi um SMS pedindo meus dados bancários?,phishing,fora_do_escopo,0.462,False,phishing,0.697,True
+5_pix_08,Como agir quando recebi mensagem dizendo que meu Pix está bloqueado?,pix,pix,0.487,True,pix,0.692,True
+5_boato_07,Como agir quando uma notícia parece falsa e quero verificar?,boato,fora_do_escopo,0.393,False,boato,0.872,True
+5_senha_12,Como agir quando recebi um pedido para compartilhar minha senha?,senha,senha,0.515,True,senha,0.444,True
+5_wifi_13,Como agir quando quero fazer uma compra em Wi-Fi de aeroporto?,wifi,wifi,0.411,True,wifi,0.819,True
+5_privacidade_04,Como agir quando um site pede informações pessoais demais?,privacidade,fora_do_escopo,0.473,False,privacidade,0.726,True
+5_phishing_01,Que cuidados tomar se recebi um SMS pedindo meus dados bancários?,phishing,fora_do_escopo,0.462,False,phishing,0.697,True
+5_whatsapp_03,Que cuidados tomar se uma pessoa se passou por um amigo no aplicativo?,whatsapp,fora_do_escopo,0.499,False,falso_suporte,0.285,False
+5_boato_14,Que cuidados tomar se uma notícia parece falsa e quero verificar?,boato,fora_do_escopo,0.42,False,boato,0.872,True
+5_senha_09,Que cuidados tomar se recebi um pedido para compartilhar minha senha?,senha,senha,0.514,True,senha,0.444,True
+5_falso_suporte_06,Que cuidados tomar se um atendente desconhecido pede meus dados?,falso_suporte,fora_do_escopo,0.403,False,falso_suporte,0.384,True
+5_wifi_08,Que cuidados tomar se quero fazer uma compra em Wi-Fi de aeroporto?,wifi,wifi,0.434,True,wifi,0.819,True
+5_pix_10,Que cuidados tomar se recebi mensagem dizendo que meu Pix está bloqueado?,pix,pix,0.49,True,pix,0.692,True
+5_privacidade_14,Que cuidados tomar se um site pede informações pessoais demais?,privacidade,fora_do_escopo,0.473,False,privacidade,0.726,True

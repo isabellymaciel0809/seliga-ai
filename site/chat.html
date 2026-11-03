@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fica Esperto AI · Chat</title>
+  <meta name="description" content="Assistente educativo de segurança digital para adolescentes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='.15' stop-color='%23da291c'/%3E%3Cstop offset='.9' stop-color='%230000ff'/%3E%3C/linearGradient%3E%3Cpath d='M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z' fill='url(%23d)'/%3E%3Cpath d='m16.5 24.5 5 5 10-11' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#05050f">
+  <script>/* aplica tema e contraste salvos antes de desenhar, para a tela não piscar */try{var d=document.documentElement;if(localStorage.getItem("fe_tema")==="claro")d.dataset.tema="claro";if(localStorage.getItem("fe_contraste")==="alto")d.dataset.contraste="alto"}catch(e){}</script>
+</head>
+<body class="pagina-chat" data-pagina="chat" data-rodape="nao">
+  <div class="casca">
+    <div id="topo-site"></div>
+
+    <div class="barra-chat">
+      <label class="interruptor">
+        <input type="checkbox" id="comparar">
+        <span class="trilho" aria-hidden="true"></span>
+        <span>Comparar com o chatbot de exemplo</span>
+      </label>
+      <button id="limpar" class="botao-icone" type="button" aria-label="Nova conversa" title="Nova conversa">
+        <span data-icone="recomecar"></span><span class="rotulo-largo">Nova conversa</span>
+      </button>
+    </div>
+
+    <div id="aviso-chat" class="aviso aviso-chat" role="note">
+      <span data-icone="cadeado"></span>
+      <span><strong>Nunca escreva</strong> senha, CPF, códigos ou dados do banco. Projeto educativo, não é um canal oficial.</span>
+    </div>
+
+    <main id="conteudo" class="conversa" aria-live="polite" aria-label="Conversa com o assistente"></main>
+
+    <section class="sugestoes" aria-label="Sugestões de perguntas">
+      <div id="chips" class="chips"></div>
+    </section>
+
+    <form id="formulario" class="entrada" autocomplete="off">
+      <label for="pergunta" class="sr-only">Escreva sua dúvida</label>
+      <input id="pergunta" type="text" maxlength="300" placeholder="Conte o que aconteceu, do seu jeito..." required>
+      <button type="submit" class="enviar" aria-label="Enviar pergunta">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5l3 8.5-3 8.5Zm3-8.5h8"/></svg>
+      </button>
+    </form>
+
+    <footer class="rodape rodape-chat">
+      Responde sobre 8 temas de segurança digital. Não substitui um adulto de confiança, a escola ou o seu banco.
+    </footer>
+  </div>
+
+  <script src="js/comum.js" defer></script>
+  <script src="js/formatar.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fica Esperto AI · Simulador</title>
+  <meta name="description" content="Simulador de golpes: treine como reagir a mensagens suspeitas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='.15' stop-color='%23da291c'/%3E%3Cstop offset='.9' stop-color='%230000ff'/%3E%3C/linearGradient%3E%3Cpath d='M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z' fill='url(%23d)'/%3E%3Cpath d='m16.5 24.5 5 5 10-11' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#05050f">
+  <script>/* aplica tema e contraste salvos antes de desenhar, para a tela não piscar */try{var d=document.documentElement;if(localStorage.getItem("fe_tema")==="claro")d.dataset.tema="claro";if(localStorage.getItem("fe_contraste")==="alto")d.dataset.contraste="alto"}catch(e){}</script>
+</head>
+<body data-pagina="simulador">
+  <div class="casca">
+    <div id="topo-site"></div>
+    <main id="conteudo" class="conteudo">
+      <section id="lista">
+        <div class="cabecalho-pagina">
+          <h1><span data-icone="simulador"></span> Simulador de golpes</h1>
+          <p>Golpistas não avisam que são golpistas. Aqui você recebe mensagens como as de verdade e escolhe o que responder.
+            Tudo é encenado: nenhuma mensagem é enviada para ninguém.</p>
+        </div>
+        <div id="cenarios" class="grade"></div>
+      </section>
+
+      <section id="jogo" hidden>
+        <button id="voltar" class="botao-texto" type="button"><span data-icone="voltar"></span> Outros cenários</button>
+        <h2 id="titulo-jogo" class="sr-only"></h2>
+        <div class="celular" id="celular" style="margin-top:12px">
+          <div class="celular-topo">
+            <span class="foto" id="foto" aria-hidden="true"></span>
+            <div><strong id="contato"></strong><small id="info-contato"></small></div>
+          </div>
+          <div id="tela" class="celular-conversa" aria-live="polite"></div>
+          <div id="opcoes" class="celular-opcoes"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="rodape">Os nomes, números e chaves Pix das conversas são inventados.</footer>
+  </div>
+
+  <script src="js/comum.js" defer></script>
+  <script src="js/formatar.js" defer></script>
+  <script src="js/simulador.js" defer></script>
+</body>
+</html>
