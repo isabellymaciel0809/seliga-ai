@@ -150,28 +150,36 @@
     canvas.width = 1080;
     canvas.height = 1350;
     const ctx = canvas.getContext("2d");
-    const fundo = ctx.createLinearGradient(0, 0, 1080, 1350);
-    fundo.addColorStop(0, "#da291c");
-    fundo.addColorStop(1, "#0000ff");
-    ctx.fillStyle = fundo;
-    ctx.fillRect(0, 0, 1080, 1350);
-    const fonte = '"Nunito", "Segoe UI", system-ui, sans-serif';
+    // fundo branco com faixa vermelha no topo e no rodapé, placar em vermelho e texto preto
     ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, 1080, 1350);
+    const faixa = ctx.createLinearGradient(0, 0, 1080, 0);
+    faixa.addColorStop(0, "#da291c");
+    faixa.addColorStop(1, "#9e1a10");
+    ctx.fillStyle = faixa;
+    ctx.fillRect(0, 0, 1080, 24);
+    ctx.fillRect(0, 1150, 1080, 200);
+    const fonte = '"Nunito", "Segoe UI", system-ui, sans-serif';
+    ctx.fillStyle = "#111111";
     ctx.textAlign = "center";
     ctx.font = `800 52px ${fonte}`;
     ctx.fillText("Quiz: é golpe ou não?", 540, 220);
     ctx.font = `160px ${fonte}`;
     ctx.fillText(nivel[0], 540, 470);
+    ctx.fillStyle = "#da291c";
     ctx.font = `900 260px ${fonte}`;
     ctx.fillText(`${acertos}/${MENSAGENS.length}`, 540, 790);
+    ctx.fillStyle = "#111111";
     ctx.font = `800 64px ${fonte}`;
     ctx.fillText(nivel[1], 540, 920);
+    ctx.fillStyle = "#4a4a52";
     ctx.font = `600 40px ${fonte}`;
-    ctx.globalAlpha = 0.9;
     ctx.fillText("Você consegue reconhecer um golpe?", 540, 1010);
-    ctx.globalAlpha = 1;
+    ctx.fillStyle = "#ffffff";
     ctx.font = `800 44px ${fonte}`;
-    ctx.fillText("🛡️ Fica Esperto AI", 540, 1230);
+    const largura = ctx.measureText("Fica Esperto AI").width;
+    Comum.desenharEscudo(ctx, 540 - (largura + 64) / 2 - 6, 1220, 58);
+    ctx.fillText("Fica Esperto AI", 540 + 32, 1265);
     return canvas;
   }
 

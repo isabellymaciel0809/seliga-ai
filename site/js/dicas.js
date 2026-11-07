@@ -56,16 +56,20 @@
     canvas.width = 1080;
     canvas.height = 1350;
     const ctx = canvas.getContext("2d");
-    const fundo = ctx.createLinearGradient(0, 0, 1080, 1350);
-    fundo.addColorStop(0, "#da291c"); // vermelho Claro
-    fundo.addColorStop(1, "#0000ff"); // azul SoulCode
-    ctx.fillStyle = fundo;
+    // fundo branco com faixa vermelha no topo e no rodapé, texto preto
+    ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, 1080, 1350);
+    const faixa = ctx.createLinearGradient(0, 0, 1080, 0);
+    faixa.addColorStop(0, "#da291c");
+    faixa.addColorStop(1, "#9e1a10");
+    ctx.fillStyle = faixa;
+    ctx.fillRect(0, 0, 1080, 24);
+    ctx.fillRect(0, 1206, 1080, 144);
 
     const fonte = '"Nunito", "Segoe UI", system-ui, sans-serif';
-    ctx.fillStyle = "#ffffff";
     ctx.font = `120px ${fonte}`;
     ctx.fillText(d.icone, 90, 230);
+    ctx.fillStyle = "#111111";
     ctx.font = `800 76px ${fonte}`;
     let y = 360;
     for (const linha of quebrar(ctx, d.titulo, 900)) {
@@ -74,13 +78,14 @@
     }
     y += 40;
     d.dicas.forEach((dica, i) => {
-      ctx.fillStyle = "rgba(255,255,255,0.18)";
+      ctx.fillStyle = "#fdecea";
       ctx.beginPath();
       ctx.roundRect(70, y - 70, 940, 230, 36);
       ctx.fill();
-      ctx.fillStyle = "#ffffff";
+      ctx.fillStyle = "#da291c";
       ctx.font = `800 54px ${fonte}`;
       ctx.fillText(String(i + 1), 110, y + 4);
+      ctx.fillStyle = "#111111";
       ctx.font = `700 48px ${fonte}`;
       let yy = y;
       for (const linha of quebrar(ctx, dica, 800)) {
@@ -89,10 +94,12 @@
       }
       y += 260;
     });
+    Comum.desenharEscudo(ctx, 82, 1228, 52);
+    ctx.fillStyle = "#ffffff";
     ctx.font = `800 40px ${fonte}`;
-    ctx.fillText("🛡️ Fica Esperto AI", 90, 1270);
+    ctx.fillText("Fica Esperto AI", 146, 1270);
     ctx.font = `600 30px ${fonte}`;
-    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
     ctx.fillText("Projeto educativo de segurança digital", 90, 1310);
     return canvas;
   }

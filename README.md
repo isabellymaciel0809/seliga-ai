@@ -4,7 +4,7 @@ Projeto do bootcamp da SoulCode Academy, com apoio da Claro e da Favela Gaming. 
 
 O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phishing), falso suporte, senhas, Wi-Fi público, privacidade e notícias falsas.
 
-> Projeto educativo, sem integração com a Claro, a SoulCode, a Favela Gaming ou qualquer canal oficial. O site usa as cores da Claro e da SoulCode, e o logo da Claro aparece só no rodapé e na página Sobre, como identificação do apoio ao bootcamp.
+> Projeto educativo, sem integração com a Claro, a SoulCode, a Favela Gaming ou qualquer canal oficial. O site usa o vermelho da Claro, e o logo da Claro aparece só no rodapé e na página Sobre, como identificação do apoio ao bootcamp.
 
 ---
 
@@ -32,9 +32,9 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 | 📊 **Sobre** | Problema, como funciona, resultados com gráfico, hipóteses e limitações |
 | 📝 **Avaliação** | Teste com adolescentes (veja abaixo) |
 
-Todas as páginas usam o mesmo visual escuro e tecnológico da página inicial, com cartões de "vidro fosco" e brilho vermelho e azul no fundo. No topo, ficam os botões **A−/A+** (tamanho do texto), **☀/☾** (tema claro ou escuro; o site lembra a escolha) e **◐** (alto contraste). Ao trocar de página, o topo e o menu ficam parados e só o conteúdo muda, com uma transição suave (no Chrome e no Edge). No celular, o menu vira uma barra fixa embaixo da tela, como nos apps. Nenhuma conversa é salva nem enviada: tudo roda no navegador, sem servidor.
+Todas as páginas usam o mesmo visual: fundo branco, letras pretas e vermelho no escudo, nos botões e nos destaques. No topo, ficam os botões **A−/A+** (tamanho do texto), **☾/☀** (tema escuro opcional, em preto e vermelho; o site lembra a escolha) e **◐** (alto contraste). Ao trocar de página, o topo e o menu ficam parados e só o conteúdo muda, com uma transição suave (no Chrome e no Edge). No celular, o menu vira uma barra fixa embaixo da tela, como nos apps. Nenhuma conversa é salva nem enviada: tudo roda no navegador, sem servidor.
 
-**Visual:** azul da SoulCode (`#0000FF`) nos botões, no assistente e nos gráficos, vermelho da Claro (`#DA291C`) nos alertas, amarelo da SoulCode (`#F9B040`) nos exemplos. O par azul e vermelho foi testado para daltonismo e para contraste de leitura. O logo é um escudo em degradê do vermelho da Claro para o azul da SoulCode, e os ícones da interface seguem todos o mesmo estilo de linha.
+**Visual:** fundo branco, texto preto (`#111111`) e o vermelho da Claro (`#DA291C`) nos botões, no escudo, no assistente e nos gráficos, com amarelo (`#F9B040`) nos exemplos. Todas as combinações de texto e fundo passam no contraste mínimo de leitura (4,5:1). O logo é um escudo em degradê do vermelho da Claro para um vermelho escuro, e os ícones da interface seguem todos o mesmo estilo de linha.
 
 ---
 

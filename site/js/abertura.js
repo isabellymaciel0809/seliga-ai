@@ -1,4 +1,4 @@
-// Abertura da página inicial: partículas vermelhas (Claro) e azuis (SoulCode) formam o escudo,
+// Abertura da página inicial: partículas vermelhas formam o escudo,
 // o "check" se desenha, o nome aparece e o botão "Entrar" leva para a página com um zoom.
 (function () {
   const raiz = document.documentElement;
@@ -22,7 +22,8 @@
     .map((letra, i) => `<span style="--i:${i}" aria-hidden="true">${letra === " " ? "&nbsp;" : letra}</span>`)
     .join("");
 
-  const CORES = { claro: "218, 41, 28", soulcode: "70, 90, 255", branco: "255, 255, 255" };
+  // vermelho e vermelho escuro no escudo; o check em preto no fundo branco (ou branco no tema escuro)
+  const CORES = { claro: "218, 41, 28", escuro: "158, 26, 16", check: raiz.dataset.tema === "escuro" ? "255, 255, 255" : "17, 17, 17" };
 
   // brilho de cada partícula desenhado uma vez só (shadowBlur a cada quadro é muito pesado)
   const brilhos = {};
@@ -50,14 +51,14 @@
     const total = contorno.getTotalLength();
     for (let i = 0; i < 64; i++) {
       const p = contorno.getPointAtLength((total * i) / 64);
-      // mesma diagonal do degradê: vermelho no alto à esquerda, azul embaixo à direita
+      // mesma diagonal do degradê: vermelho no alto à esquerda, vermelho escuro embaixo à direita
       const posicao = ((p.x - 7) / 34 + (p.y - 3) / 41.5) / 2;
-      pontos.push({ ...paraTela(p.x, p.y), cor: posicao < 0.5 ? CORES.claro : CORES.soulcode });
+      pontos.push({ ...paraTela(p.x, p.y), cor: posicao < 0.5 ? CORES.claro : CORES.escuro });
     }
     const totalCheck = check.getTotalLength();
     for (let i = 0; i <= 12; i++) {
       const p = check.getPointAtLength((totalCheck * i) / 12);
-      pontos.push({ ...paraTela(p.x, p.y), cor: CORES.branco });
+      pontos.push({ ...paraTela(p.x, p.y), cor: CORES.check });
     }
     return pontos;
   }

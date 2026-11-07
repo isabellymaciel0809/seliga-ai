@@ -13,13 +13,13 @@
   ];
   const NO_CELULAR = ["inicio", "chat", "simulador", "quiz"]; // o resto fica em "Mais"
 
-  // Escudo em degradê: do vermelho Claro (alto, à esquerda) ao azul SoulCode (baixo, à direita).
+  // Escudo em degradê: do vermelho Claro (alto, à esquerda) a um vermelho escuro (baixo, à direita).
   // O degradê fica num SVG invisível no início da página para todos os escudos usarem o mesmo id
   // (se o primeiro escudo da página estiver escondido, um degradê dentro dele não seria desenhado).
   document.body.insertAdjacentHTML("afterbegin", `
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
       <linearGradient id="degrade-escudo" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0.15" stop-color="#da291c"/><stop offset="0.9" stop-color="#0000ff"/>
+        <stop offset="0.15" stop-color="#da291c"/><stop offset="0.9" stop-color="#9e1a10"/>
       </linearGradient>
     </svg>`);
   const LOGO = `
@@ -92,9 +92,9 @@
   const aplicarEscala = () => raiz.style.setProperty("--escala", escala);
   aplicarEscala();
   if (ler("fe_contraste", "") === "alto") raiz.dataset.contraste = "alto";
-  if (ler("fe_tema", "") === "claro") raiz.dataset.tema = "claro";
-  const iconeTema = () => icone(raiz.dataset.tema === "claro" ? "lua" : "sol");
-  const rotuloTema = () => (raiz.dataset.tema === "claro" ? "Usar tema escuro" : "Usar tema claro");
+  if (ler("fe_tema", "") === "escuro") raiz.dataset.tema = "escuro";
+  const iconeTema = () => icone(raiz.dataset.tema === "escuro" ? "sol" : "lua");
+  const rotuloTema = () => (raiz.dataset.tema === "escuro" ? "Usar tema claro" : "Usar tema escuro");
 
   // ---------- topo, menu de cima (computador) e barra de baixo (celular) ----------
   function link([href, id, nome, ic], atual) {
@@ -164,10 +164,10 @@
     document.getElementById("fonte-menos").addEventListener("click", () => mudarEscala(-0.1));
     document.getElementById("fonte-mais").addEventListener("click", () => mudarEscala(0.1));
     document.getElementById("tema").addEventListener("click", (e) => {
-      const claro = raiz.dataset.tema !== "claro";
-      if (claro) raiz.dataset.tema = "claro";
+      const escuro = raiz.dataset.tema !== "escuro";
+      if (escuro) raiz.dataset.tema = "escuro";
       else delete raiz.dataset.tema;
-      gravar("fe_tema", claro ? "claro" : "");
+      gravar("fe_tema", escuro ? "escuro" : "");
       e.currentTarget.innerHTML = iconeTema();
       e.currentTarget.setAttribute("aria-label", rotuloTema());
       e.currentTarget.title = rotuloTema();
@@ -232,7 +232,21 @@
 
   window.addEventListener("pagehide", pararFala);
 
-  // ---------- confete (nas cores da Claro e da SoulCode) ----------
+  // ---------- escudo branco com check vermelho, para os cards em imagem (o emoji 🛡️ sai azul) ----------
+  function desenharEscudo(ctx, x, y, tamanho) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.scale(tamanho / 48, tamanho / 48);
+    ctx.fillStyle = "#ffffff";
+    ctx.fill(new Path2D("M24 3 41 9.5v12.2c0 10.6-7.1 19.6-17 22.8C14.1 41.3 7 32.3 7 21.7V9.5Z"));
+    ctx.strokeStyle = "#da291c";
+    ctx.lineWidth = 4;
+    ctx.lineCap = ctx.lineJoin = "round";
+    ctx.stroke(new Path2D("m16.5 24.5 5 5 10-11"));
+    ctx.restore();
+  }
+
+  // ---------- confete (em vermelho, preto e amarelo) ----------
   function confete() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const canvas = document.createElement("canvas");
@@ -242,7 +256,7 @@
     const ctx = canvas.getContext("2d");
     const w = (canvas.width = window.innerWidth);
     const h = (canvas.height = window.innerHeight);
-    const cores = ["#da291c", "#3d4dff", "#f9b040", "#ffffff", "#8c98ff"];
+    const cores = ["#da291c", "#9e1a10", "#f9b040", "#111111", "#ff6b5e"];
     const pedacos = Array.from({ length: 140 }, () => ({
       x: w / 2 + (Math.random() - 0.5) * 120,
       y: h * 0.35,
@@ -380,7 +394,7 @@
       </footer>`);
   }
 
-  window.Comum = { LOGO, icone, temVoz, alternarFala, pararFala, marcarBotao, ler, gravar, confete, hora,
+  window.Comum = { LOGO, icone, temVoz, alternarFala, pararFala, marcarBotao, ler, gravar, confete, hora, desenharEscudo,
     CONQUISTAS, conquistas, conquistar, iniciarRevelar };
   const iniciar = () => {
     montarTopo();
