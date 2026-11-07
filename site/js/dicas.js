@@ -97,14 +97,14 @@
     Comum.desenharEscudo(ctx, 82, 1228, 52);
     ctx.fillStyle = "#ffffff";
     ctx.font = `800 40px ${fonte}`;
-    ctx.fillText("Fica Esperto AI", 146, 1270);
+    ctx.fillText("Se Liga AI", 146, 1270);
     ctx.font = `600 30px ${fonte}`;
     ctx.fillStyle = "rgba(255,255,255,0.9)";
     ctx.fillText("Projeto educativo de segurança digital", 90, 1310);
     return canvas;
   }
 
-  const nomeArquivo = (d) => `fica-esperto-${d.tema}.png`;
+  const nomeArquivo = (d) => `se-liga-${d.tema}.png`;
 
   cards.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-i]");
@@ -116,7 +116,7 @@
       const arquivo = new File([blob], nomeArquivo(d), { type: "image/png" });
       if (b.dataset.acao === "compartilhar" && navigator.canShare && navigator.canShare({ files: [arquivo] })) {
         try {
-          await navigator.share({ files: [arquivo], title: d.titulo, text: "Dica do Fica Esperto AI 🛡️" });
+          await navigator.share({ files: [arquivo], title: d.titulo, text: "Dica do Se Liga AI 🛡️" });
           return;
         } catch (erro) {
           if (erro.name === "AbortError") return; // a pessoa cancelou

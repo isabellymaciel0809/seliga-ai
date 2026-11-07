@@ -1,4 +1,4 @@
-# Fica Esperto AI: Assistente de Segurança Digital para Adolescentes
+# Se Liga AI: Assistente de Segurança Digital para Adolescentes
 
 Projeto do bootcamp da SoulCode Academy, com apoio da Claro e da Favela Gaming. O enunciado pede **"um protótipo de chatbot que oriente usuários sobre golpes digitais, fraudes, privacidade e uso seguro da internet"**, entregue como **protótipo funcional**. O nosso é voltado para adolescentes, que é o público da base fornecida pela disciplina.
 
@@ -68,7 +68,7 @@ O chatbot **não é um ChatGPT**: ele nunca inventa orientações. Ele só escol
 
 Acertos do assistente em perguntas que o modelo não viu no treino:
 
-| Conjunto | Fica Esperto AI |
+| Conjunto | Se Liga AI |
 |---|---|
 | Teste oficial da base (24 perguntas) | **21 de 24** |
 | Teste oficial com a confirmação do tema | **24 de 24** |

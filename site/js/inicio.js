@@ -51,7 +51,7 @@
 
   // ---------- celular que conta a história ----------
   const balao = (quem, html, extra = "") => `<div class="balao ${quem} ${extra}">${html}</div>`;
-  const cabecalho = `<div class="tela-topo"><span class="tela-logo">${Comum.LOGO}</span>Fica Esperto AI</div>`;
+  const cabecalho = `<div class="tela-topo"><span class="tela-logo">${Comum.LOGO}</span>Se Liga AI</div>`;
 
   function telaProtecao() {
     const pergunta = "meu cpf é 123.456.789-00";

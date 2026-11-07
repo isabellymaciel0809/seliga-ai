@@ -18,7 +18,7 @@
 
   // nome letra por letra
   const titulo = document.getElementById("abertura-titulo");
-  titulo.innerHTML = [..."Fica Esperto AI"]
+  titulo.innerHTML = [..."Se Liga AI"]
     .map((letra, i) => `<span style="--i:${i}" aria-hidden="true">${letra === " " ? "&nbsp;" : letra}</span>`)
     .join("");
 

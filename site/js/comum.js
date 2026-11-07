@@ -114,7 +114,7 @@
       <header class="topo">
         <a class="marca" href="index.html" title="Página inicial">
           ${LOGO}
-          <span><strong>Fica Esperto AI</strong><small>Segurança digital para adolescentes</small></span>
+          <span><strong>Se Liga AI</strong><small>Segurança digital para adolescentes</small></span>
         </a>
         <div class="acessibilidade" role="group" aria-label="Acessibilidade">
           <button type="button" id="fonte-menos" title="Diminuir texto">A−<span class="sr-only"> (diminuir texto)</span></button>
@@ -372,7 +372,7 @@
         <div class="rodape-colunas">
           <div class="rodape-marca">
             <span class="rodape-logo">${LOGO}</span>
-            <strong>Fica Esperto AI</strong>
+            <strong>Se Liga AI</strong>
             <p>Assistente de IA que ajuda adolescentes a reconhecer golpes e se proteger na internet.</p>
           </div>
           <nav aria-label="Explorar"><h2>Explorar</h2>

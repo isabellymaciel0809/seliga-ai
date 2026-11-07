@@ -177,19 +177,19 @@
     ctx.fillText("Você consegue reconhecer um golpe?", 540, 1010);
     ctx.fillStyle = "#ffffff";
     ctx.font = `800 44px ${fonte}`;
-    const largura = ctx.measureText("Fica Esperto AI").width;
+    const largura = ctx.measureText("Se Liga AI").width;
     Comum.desenharEscudo(ctx, 540 - (largura + 64) / 2 - 6, 1220, 58);
-    ctx.fillText("Fica Esperto AI", 540 + 32, 1265);
+    ctx.fillText("Se Liga AI", 540 + 32, 1265);
     return canvas;
   }
 
   function salvarCard(nivel, compartilhar) {
     cardResultado(nivel).toBlob(async (blob) => {
       if (!blob) return;
-      const arquivo = new File([blob], "meu-resultado-fica-esperto.png", { type: "image/png" });
+      const arquivo = new File([blob], "meu-resultado-se-liga.png", { type: "image/png" });
       if (compartilhar && navigator.canShare && navigator.canShare({ files: [arquivo] })) {
         try {
-          await navigator.share({ files: [arquivo], text: `Tirei ${acertos}/${MENSAGENS.length} no quiz "É golpe ou não?" do Fica Esperto AI 🛡️` });
+          await navigator.share({ files: [arquivo], text: `Tirei ${acertos}/${MENSAGENS.length} no quiz "É golpe ou não?" do Se Liga AI 🛡️` });
           return;
         } catch (erro) {
           if (erro.name === "AbortError") return;
