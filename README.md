@@ -10,12 +10,12 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 
 ## Para começar (2 minutos)
 
-1. **Abra o site:** **https://isabellymaciel0809.github.io/fica-esperto-ai/** ou **https://fica-esperto-ai.vercel.app** (o mesmo site, nos dois endereços). Funciona no computador e no celular, sem instalar nada. Sem internet, dê dois cliques em `site/index.html` na pasta do projeto: funciona igual (só a fonte dos títulos muda).
+1. **Abra o site:** **https://isabellymaciel0809.github.io/seliga-ai/** ou **https://seliga-ai.vercel.app** (o mesmo site, nos dois endereços). Funciona no computador e no celular, sem instalar nada. Sem internet, dê dois cliques em `site/index.html` na pasta do projeto: funciona igual (só a fonte dos títulos muda).
 2. **Teste o chat:** escreva na caixa da página inicial, ou abra o Chat, do jeito que um adolescente escreveria, como *"um cara no zap pediu o código que chegou no meu cel"*.
 3. **Clique em "Por quê?"** abaixo da resposta: ele mostra as palavras que mais pesaram na escolha do tema.
 4. **Veja a página 📊 Sobre:** resume problema, funcionamento e resultados.
 
-**Na apresentação:** a animação de entrada aparece só uma vez por visita. Para mostrar de novo, abra **https://isabellymaciel0809.github.io/fica-esperto-ai/?abertura** (ou clique em "Ver a abertura de novo", no rodapé da página inicial). O botão "Pular" e a tecla Esc pulam a animação.
+**Na apresentação:** a animação de entrada aparece só uma vez por visita. Para mostrar de novo, abra **https://isabellymaciel0809.github.io/seliga-ai/?abertura** (ou clique em "Ver a abertura de novo", no rodapé da página inicial). O botão "Pular" e a tecla Esc pulam a animação.
 
 ---
 
@@ -116,7 +116,7 @@ Acertos do assistente em perguntas que o modelo não viu no treino:
 | **Teste com adolescentes** | A fazer: é o que confirma as hipóteses H1 e H2 (veja abaixo) |
 | Revisar os textos do simulador, do quiz, do checklist e das dicas | A fazer: todo mundo pode ler e sugerir ajustes |
 | Preencher o resultado do teste com adolescentes no documento Word | Depois do teste |
-| Publicar o site | Feito: https://isabellymaciel0809.github.io/fica-esperto-ai/ e https://fica-esperto-ai.vercel.app |
+| Publicar o site | Feito: https://isabellymaciel0809.github.io/seliga-ai/ e https://seliga-ai.vercel.app |
 | QR code do site para os slides | A fazer |
 
 ### Como aplicar o teste com adolescentes
