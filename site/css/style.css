@@ -114,6 +114,7 @@
   color-scheme: dark;
 }
 :root[data-contraste="alto"] a { color: #ffd84d; }
+:root[data-contraste="alto"] .pular { color: var(--primaria-texto); }
 
 /* ===================== Base ===================== */
 * { box-sizing: border-box; }
@@ -554,7 +555,8 @@ body::before {
   cursor: pointer;
 }
 .celular-opcoes button:hover { background: var(--primaria-clara); }
-.retorno { border-radius: 12px; padding: 10px 12px; font-size: 0.9375rem; align-self: stretch; }
+/* cor própria: dentro do celular escuro a letra herdada é clara e sumiria no fundo claro do aviso */
+.retorno { border-radius: 12px; padding: 10px 12px; font-size: 0.9375rem; align-self: stretch; color: var(--texto); }
 .retorno.ok { background: var(--sucesso-fundo); border-left: 4px solid var(--sucesso); }
 .retorno.ruim { background: var(--alerta); border-left: 4px solid var(--alerta-borda); }
 .retorno.dica { background: var(--exemplo); border-left: 4px solid var(--exemplo-borda); }
@@ -565,8 +567,8 @@ body::before {
 
 /* Simulador com a cara de cada app (sempre escuro, como o modo escuro dos apps) */
 .celular[data-app] { --app-fundo: #0b141a; --app-topo: #202c33; --app-recebida: #202c33; --app-enviada: #005c4b; --app-texto: #e9edef; --app-status: #8696a0; color: var(--app-texto); }
-.celular[data-app="jogo"] { --app-fundo: #1e1f22; --app-topo: #2b2d31; --app-recebida: #2b2d31; --app-enviada: #5865f2; --app-status: #949ba4; }
-.celular[data-app="instagram"] { --app-fundo: #000000; --app-topo: #121212; --app-recebida: #262626; --app-enviada: linear-gradient(135deg, #7c3aed, #3b82f6); --app-status: #a8a8a8; }
+.celular[data-app="jogo"] { --app-fundo: #1e1f22; --app-topo: #2b2d31; --app-recebida: #2b2d31; --app-enviada: #4752c4; --app-status: #949ba4; }
+.celular[data-app="instagram"] { --app-fundo: #000000; --app-topo: #121212; --app-recebida: #262626; --app-enviada: linear-gradient(135deg, #7c3aed, #2563eb); --app-status: #a8a8a8; }
 .celular[data-app] .celular-topo { background: var(--app-topo); border-bottom-color: rgba(255, 255, 255, 0.06); }
 .celular[data-app] .celular-topo small { color: var(--app-status); }
 .celular[data-app] .celular-conversa {
@@ -582,6 +584,7 @@ body::before {
 .celular .meta { display: flex; justify-content: flex-end; align-items: center; gap: 3px; font-size: 0.6875rem; opacity: 0.7; margin-top: 2px; }
 .celular .ticks { width: 16px; height: 11px; fill: none; stroke: #53bdeb; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .celular[data-app="instagram"] .ticks, .celular[data-app="jogo"] .ticks { stroke: #ffffff; }
+.celular[data-app] .mensagem.usuario .meta { opacity: 1; }
 .celular[data-app] .digitando span { background: var(--app-status); }
 :root[data-contraste="alto"] .celular[data-app] { --app-fundo: #000000; --app-topo: #000000; --app-recebida: #000000; --app-enviada: #000000; }
 :root[data-contraste="alto"] .celular[data-app] .mensagem { border: 1px solid #ffffff !important; }
@@ -974,6 +977,7 @@ h1 [data-icone] .icone, h2 [data-icone] .icone { color: var(--primaria-tinta); v
 
 .mensagem .hora { display: block; text-align: right; font-size: 0.6875rem; opacity: 0.6; margin-top: 4px; }
 .mensagem.assistente .hora { margin-top: 6px; }
+.mensagem.usuario .hora { opacity: 1; }
 /* enquanto a resposta "é digitada", os botões esperam */
 .mensagem.escrevendo .acoes, .mensagem.escrevendo .continuar, .mensagem.escrevendo .ver-mais, .mensagem.escrevendo .hora { opacity: 0; pointer-events: none; }
 .mensagem .acoes, .mensagem .continuar, .mensagem .ver-mais { transition: opacity 0.3s ease; }
@@ -1146,7 +1150,7 @@ html:not(.com-abertura) .capa-escura .revelar, html.capa-livre .capa-escura .rev
 .tela-logo svg { width: 100%; height: 100%; display: block; }
 .tela-conversa { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 0.875rem; overflow: hidden; }
 .balao { padding: 10px 12px; border-radius: 16px; max-width: 88%; line-height: 1.4; }
-.balao.eu { align-self: flex-end; background: var(--primaria); color: #ffffff; border-bottom-right-radius: 5px; }
+.balao.eu { align-self: flex-end; background: var(--primaria); color: var(--primaria-texto); border-bottom-right-radius: 5px; }
 .balao.ia { align-self: flex-start; background: var(--bolha-assistente); border: 1px solid var(--borda); border-top-left-radius: 5px; }
 .balao.ia.alerta { border-color: var(--alerta-borda); background: var(--alerta); }
 .balao ol { margin: 6px 0; padding-left: 18px; }
@@ -1156,7 +1160,7 @@ html:not(.com-abertura) .capa-escura .revelar, html.capa-livre .capa-escura .rev
 .cartao-tela small { color: var(--texto-suave); }
 .cartao-tela p { margin: 6px 0 0; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.8125rem; }
 mark { background: var(--marcado); color: var(--marcado-texto); border-radius: 4px; padding: 0 3px; }
-.balao.eu mark { background: rgba(255, 255, 255, 0.25); color: #ffffff; }
+.balao.eu mark { background: rgba(255, 255, 255, 0.25); color: inherit; }
 .selo-tela { align-self: center; display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 800; color: var(--sucesso); background: var(--sucesso-fundo); padding: 4px 10px; border-radius: 999px; }
 .selo-tela.perigo { color: var(--alerta-borda); background: var(--alerta); }
 .prob { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; margin-top: 8px; border-radius: 10px; overflow: hidden; background: var(--painel-2); font-size: 0.8125rem; }
