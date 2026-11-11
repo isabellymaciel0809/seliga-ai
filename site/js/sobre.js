@@ -140,6 +140,11 @@
   // Preencha com as pessoas do grupo. Enquanto a lista estiver vazia, a seção "Quem fez" fica escondida.
   // Exemplo: { nome: "Nome Sobrenome", papel: "Notebook e modelo" },
   const EQUIPE = [
+    { nome: "Isabelly Maciel", papel: "Desenvolvimento do código (site, modelo de IA e notebook) e apresentação" },
+    { nome: "Diane", papel: "Parte teórica e apresentação" },
+    { nome: "Francielly", papel: "Parte teórica e apresentação" },
+    { nome: "Vanusa", papel: "Parte teórica e apresentação" },
+    { nome: "Iris", papel: "Parte teórica e apresentação" },
   ];
   if (EQUIPE.length) {
     document.getElementById("equipe").innerHTML = EQUIPE.map((p) => `

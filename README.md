@@ -6,6 +6,10 @@ O assistente orienta sobre 8 temas: golpes no WhatsApp, Pix, links falsos (phish
 
 > Projeto educativo, sem integração com a Claro, a SoulCode, a Favela Gaming ou qualquer canal oficial. O site usa o vermelho da Claro, e o logo da Claro aparece só no rodapé e na página Sobre, como identificação do apoio ao bootcamp.
 
+**Equipe:**
+- **Isabelly Maciel**: desenvolvimento do código (site, modelo de IA e notebook) e apresentação
+- **Diane, Francielly, Vanusa e Iris**: parte teórica e apresentação
+
 ---
 
 ## Para começar (2 minutos)
