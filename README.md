@@ -111,19 +111,7 @@ Acertos do assistente em perguntas que o modelo não viu no treino:
 
 ---
 
-## O que falta fazer
-
-| Tarefa | Situação |
-|---|---|
-| Slides da apresentação | Com a pessoa responsável (material acima, em "Para os slides") |
-| Ensaiar a demonstração | Pronto para ensaiar: siga o `Roteiro_Apresentacao.pdf` |
-| **Teste com adolescentes** | A fazer: é o que confirma as hipóteses H1 e H2 (veja abaixo) |
-| Revisar os textos do simulador, do quiz, do checklist e das dicas | A fazer: todo mundo pode ler e sugerir ajustes |
-| Preencher o resultado do teste com adolescentes no documento Word | Depois do teste |
-| Publicar o site | Feito: https://isabellymaciel0809.github.io/seliga-ai/ e https://seliga-ai.vercel.app |
-| QR code do site para os slides | A fazer |
-
-### Como aplicar o teste com adolescentes
+## Como aplicar o teste com adolescentes
 
 Use a página **📝 Avaliação**, presencialmente. Leva uns 5 minutos por pessoa:
 
