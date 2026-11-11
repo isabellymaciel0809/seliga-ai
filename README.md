@@ -100,7 +100,6 @@ Acertos do assistente em perguntas que o modelo não viu no treino:
 | `Planejamento_Projeto_IA_Adolescentes.docx` | Documento do projeto: tema, hipóteses, metodologia, resultados e limitações |
 | `Projeto_2_Seguranca_Digital_Adolescentes.csv` | Base da disciplina, original, sem alterações |
 | `base_limpa.csv` | A mesma base, limpa e ordenada por tema (gerada pela seção 2 do notebook) |
-| `Roteiro_Apresentacao.docx` / `.pdf` | **Roteiro da demonstração** de 5 minutos: lista do que conferir antes, falas, perguntas testadas para o chat, plano B e respostas para a banca |
 | `exemplos_complementares.csv` | 210 frases de treino no jeito adolescente de escrever: 164 sobre os 8 temas e 46 sobre outros assuntos (categoria `fora_do_escopo`) |
 | `perguntas_validacao.csv` | 104 perguntas novas para avaliar o assistente, em três lotes: validação, final e cego (nunca usadas no treino) |
 | `Projeto_2_Seguranca_Digital_Exemplo_Funcional.ipynb` | Notebook de exemplo da professora. Não vai para o GitHub, por ser material da disciplina |
